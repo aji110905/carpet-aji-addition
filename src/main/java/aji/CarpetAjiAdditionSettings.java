@@ -10,5 +10,5 @@ public class CarpetAjiAdditionSettings {
     }
 
     @Rule(categories = {CAA})
-    public static boolean myRule = false;
+    public static boolean betterHopperMinecart = false;
 }

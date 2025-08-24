@@ -3,6 +3,6 @@ carpet-aji-addition:
     category:
       CAA: CAA
     rule:
-      myRule:
-        name: 我的规则
-        desc: 我的规则的介绍
+      betterHopperMinecart:
+        name: 更好的漏斗矿车
+        desc: 漏斗矿车被锁定时会发光

@@ -3,7 +3,7 @@
   "package": "aji.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "myRelu.myRule"
+    "betterHopperMinecraft.HopperMinecraftEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1
