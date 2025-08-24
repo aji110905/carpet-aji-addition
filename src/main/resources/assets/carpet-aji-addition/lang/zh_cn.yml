@@ -1,0 +1,8 @@
+carpet-aji-addition:
+  carpet:
+    category:
+      CAA: CAA
+    rule:
+      myRule:
+        name: 我的规则
+        desc: 我的规则的介绍
