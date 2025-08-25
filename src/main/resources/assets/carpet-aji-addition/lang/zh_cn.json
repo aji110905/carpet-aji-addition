@@ -1,0 +1,15 @@
+{
+  "carpet-aji-addition": {
+    "carpet": {
+      "category": {
+        "CAA": "CAA"
+      },
+      "rule": {
+        "betterHopperMinecraft": {
+          "name": "更好的漏斗矿车",
+          "desc": "漏斗矿车被锁定时会发出红光，平常为白光"
+        },
+      }
+    }
+  }
+}

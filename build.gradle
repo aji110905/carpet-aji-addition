@@ -32,8 +32,6 @@ dependencies {
 
     modImplementation "carpet:fabric-carpet:${project.minecraft_version}-${project.carpet_version}"
 
-    implementation 'org.yaml:snakeyaml:1.33'
-
     testImplementation 'junit:junit:4.13.2'
 }
 

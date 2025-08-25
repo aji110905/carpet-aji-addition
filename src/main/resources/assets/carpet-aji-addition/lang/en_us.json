@@ -1,0 +1,15 @@
+{
+  "carpet-aji-addition": {
+    "carpet": {
+      "category": {
+        "CAA": "CAA"
+      },
+      "rule": {
+        "betterHopperMinecraft": {
+          "name": "Better Hopper Minecart",
+          "desc": "Locked hopper minecarts emit red light, normally white light"
+        }
+      }
+    }
+  }
+}

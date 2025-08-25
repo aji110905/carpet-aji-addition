@@ -5,6 +5,9 @@ import net.minecraft.block.entity.Hopper;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.vehicle.HopperMinecartEntity;
 import net.minecraft.entity.vehicle.StorageMinecartEntity;
+import net.minecraft.scoreboard.Team;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -23,8 +26,26 @@ public abstract class HopperMinecraftEntityMixin extends StorageMinecartEntity i
 
     @Inject(method = "tick", at = @At("RETURN"))
     private void tick(CallbackInfo ci) {
-        if (CarpetAjiAdditionSettings.betterHopperMinecart) {
-            this.setGlowing(!enabled);
+        if (CarpetAjiAdditionSettings.betterHopperMinecraft) {
+            this.setGlowing(true);
+            MinecraftServer server = this.getWorld().getServer();
+            if (server != null) {
+                if (enabled) {
+                    Team team = server.getScoreboard().getTeam("enabled_hopper_minecraft");
+                    if (team == null) {
+                        team = server.getScoreboard().addTeam("enabled_hopper_minecraft");
+                        team.setColor(Formatting.WHITE);
+                    }
+                    server.getScoreboard().addScoreHolderToTeam(this.getUuid().toString(), team);
+                }else {
+                    Team team = server.getScoreboard().getTeam("Locked_hopper_minecraft");
+                    if (team == null) {
+                        team = server.getScoreboard().addTeam("Locked_hopper_minecraft");
+                        team.setColor(Formatting.RED);
+                    }
+                    server.getScoreboard().addScoreHolderToTeam(this.getUuid().toString(), team);
+                }
+            }
             return;
         }
         this.setGlowing(false);

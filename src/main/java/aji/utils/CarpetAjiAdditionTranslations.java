@@ -1,8 +1,8 @@
 package aji.utils;
 
 import com.google.common.collect.Maps;
-import org.yaml.snakeyaml.Yaml;
-import org.yaml.snakeyaml.error.YAMLException;
+import com.google.common.reflect.TypeToken;
+import com.google.gson.Gson;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,20 +16,20 @@ import static aji.CarpetAjiAdditionServer.MOD_ID;
 public class CarpetAjiAdditionTranslations {
     private static Map<String, String> getTranslationFromResourcePath(String lang) {
         Map<String, String> translations = Maps.newHashMap();
-        String resourcePath = "assets/" + MOD_ID + "/lang/" + lang + ".yml";
+        String resourcePath = "assets/" + MOD_ID + "/lang/" + lang + ".json";
 
         try (InputStream inputStream = CarpetAjiAdditionTranslations.class.getClassLoader().getResourceAsStream(resourcePath)) {
             if (inputStream == null) {
                 return translations;
             }
-            Yaml yaml = new Yaml();
-            @SuppressWarnings("unchecked")
-            Map<String, Object> yamlMap = yaml.loadAs(new InputStreamReader(inputStream, StandardCharsets.UTF_8), Map.class);
-            flattenMap("", yamlMap, translations);
+            Gson gson = new Gson();
+            Map<String, Object> jsonMap = gson.fromJson(new InputStreamReader(inputStream, StandardCharsets.UTF_8),
+                    new TypeToken<Map<String, Object>>(){}.getType());
+            flattenMap("", jsonMap, translations);
         } catch (IOException e) {
             LOGGER.error("Unable to read translation file:{}", resourcePath, e);
-        } catch (YAMLException e) {
-            LOGGER.error("Unable to parse translation file:{}", resourcePath, e);
+        } catch (com.google.gson.JsonSyntaxException e) {
+            LOGGER.error("Invalid JSON format in file:{}", resourcePath, e);
         }
 
         return translations;
