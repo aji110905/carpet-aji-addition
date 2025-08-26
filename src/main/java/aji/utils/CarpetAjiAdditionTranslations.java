@@ -71,4 +71,24 @@ public class CarpetAjiAdditionTranslations {
 
         return fabricCarpetTranslations;
     }
+
+    public static Map<String, String> getCarpetAjiAdditionTranslations(String lang) {
+        Map<String, String> CarpetAjiAddition = Maps.newHashMap();
+        Map<String, String> translations = getTranslationFromResourcePath(lang);
+
+        if (translations == null) {
+            return CarpetAjiAddition;
+        }
+
+        String targetPrefix = "carpet-aji-addition.carpet";
+
+        for (Map.Entry<String, String> entry : translations.entrySet()) {
+            String originalKey = entry.getKey();
+            if (!(originalKey != null && originalKey.startsWith(targetPrefix))) {
+                CarpetAjiAddition.put(entry.getKey(), entry.getValue());
+            }
+        }
+
+        return CarpetAjiAddition;
+    }
 }
