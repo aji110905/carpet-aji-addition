@@ -1,4 +1,4 @@
-package aji.mixin.betterHopperMinecraft;
+package aji.mixin.betterHopperMinecart;
 
 import aji.CarpetAjiAdditionSettings;
 import net.minecraft.block.entity.Hopper;
@@ -16,17 +16,17 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(HopperMinecartEntity.class)
-public abstract class HopperMinecraftEntityMixin extends StorageMinecartEntity implements Hopper {
+public abstract class HopperMinecartEntityMixin extends StorageMinecartEntity implements Hopper {
     @Shadow
     private boolean enabled;
 
-    protected HopperMinecraftEntityMixin(EntityType<?> entityType, World world) {
+    protected HopperMinecartEntityMixin(EntityType<?> entityType, World world) {
         super(entityType, world);
     }
 
     @Inject(method = "tick", at = @At("RETURN"))
     private void tick(CallbackInfo ci) {
-        if (CarpetAjiAdditionSettings.betterHopperMinecraft) {
+        if (CarpetAjiAdditionSettings.betterHopperMinecart) {
             this.setGlowing(true);
             MinecraftServer server = this.getWorld().getServer();
             if (server != null) {

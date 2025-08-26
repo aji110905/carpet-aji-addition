@@ -10,7 +10,7 @@ public class CarpetAjiAdditionSettings {
     }
 
     @Rule(categories = {CAA})
-    public static boolean betterHopperMinecraft = false;
+    public static boolean betterHopperMinecart = false;
 
     @Rule(categories = {CAA})
     public static boolean sitOnTheGround = false;

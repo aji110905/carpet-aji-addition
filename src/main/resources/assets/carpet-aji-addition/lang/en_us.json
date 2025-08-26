@@ -5,7 +5,7 @@
         "CAA": "CAA"
       },
       "rule": {
-        "betterHopperMinecraft": {
+        "betterHopperMinecart": {
           "name": "Better Hopper Minecart",
           "desc": "Locked hopper minecarts emit red light, normally white light"
         },
