@@ -8,6 +8,10 @@
         "betterHopperMinecraft": {
           "name": "更好的漏斗矿车",
           "desc": "漏斗矿车被锁定时会发出红光，平常为白光"
+        },
+        "sitOnTheGround": {
+          "name": "席地而坐",
+          "desc": "多次蹲下可以坐到地上"
         }
       }
     }

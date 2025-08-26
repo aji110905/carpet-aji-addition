@@ -3,7 +3,8 @@
   "package": "aji.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "betterHopperMinecraft.HopperMinecraftEntityMixin"
+    "betterHopperMinecraft.HopperMinecraftEntityMixin",
+    "sitOnTheGround.PlayerEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1
