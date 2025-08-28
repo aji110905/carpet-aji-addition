@@ -21,6 +21,10 @@
         "endlessVault": {
           "name": "Endless Vault",
           "desc": "Endless Vault"
+        },
+        "lockAllHopperMinecart": {
+          "name": "Lock All Hopper Minecart",
+          "desc": "Lock All Hopper Minecart"
         }
       }
     }
