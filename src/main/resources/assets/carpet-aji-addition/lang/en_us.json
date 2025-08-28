@@ -2,24 +2,25 @@
   "carpet-aji-addition": {
     "carpet": {
       "category": {
-        "CAA": "CAA"
+        "CAA": "CAA",
+        "MINECART": "minecart"
       },
       "rule": {
         "betterHopperMinecart": {
           "name": "Better Hopper Minecart",
-          "desc": "Locked hopper minecarts emit red light, normally white light"
+          "desc": "Better Hopper Minecart"
         },
         "sitOnTheGround": {
           "name": "Sit On The Ground",
-          "desc": "Squatting down multiple times can make you sit on the ground"
+          "desc": "Sit On The Ground"
         },
         "lockAllHopper": {
           "name": "Lock All Hopper",
-          "desc": "All hopper will be locked, Whether he has received the redstone signal or not"
+          "desc": "Lock All Hopper"
         },
         "endlessVault": {
           "name": "Endless Vault",
-          "desc": "The same player can keep opening the same Vault chest"
+          "desc": "Endless Vault"
         }
       }
     }

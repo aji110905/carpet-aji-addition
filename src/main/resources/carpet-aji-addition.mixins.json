@@ -6,6 +6,7 @@
     "betterHopperMinecart.HopperMinecartEntityMixin",
     "endlessVault.VaultServerDataMixin",
     "lockAllHopper.HopperBlockEntityMixin",
+    "lockAllHopperMinecart.HopperMinecartMixin",
     "sitOnTheGround.PlayerEntityMixin"
   ],
   "injectors": {
