@@ -16,6 +16,10 @@
         "lockAllHopper": {
           "name": "Lock All Hopper",
           "desc": "All hopper will be locked, Whether he has received the redstone signal or not"
+        },
+        "endlessVault": {
+          "name": "Endless Vault",
+          "desc": "The same player can keep opening the same Vault chest"
         }
       }
     }

@@ -17,4 +17,7 @@ public class CarpetAjiAdditionSettings {
 
     @Rule(categories = {CAA})
     public static boolean lockAllHopper = false;
+
+    @Rule(categories = {CAA})
+    public static boolean endlessVault = false;
 }

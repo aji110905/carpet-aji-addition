@@ -4,8 +4,9 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "betterHopperMinecart.HopperMinecartEntityMixin",
-    "sitOnTheGround.PlayerEntityMixin",
-    "lockAllHopper.HopperBlockEntityMixin"
+    "endlessVault.VaultServerDataMixin",
+    "lockAllHopper.HopperBlockEntityMixin",
+    "sitOnTheGround.PlayerEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1
