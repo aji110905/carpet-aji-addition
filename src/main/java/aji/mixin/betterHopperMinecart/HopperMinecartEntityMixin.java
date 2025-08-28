@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(HopperMinecartEntity.class)
 public abstract class HopperMinecartEntityMixin extends StorageMinecartEntity implements Hopper {
     @Shadow
-    private boolean enabled;
+    public abstract boolean isEnabled();
 
     protected HopperMinecartEntityMixin(EntityType<?> entityType, World world) {
         super(entityType, world);
@@ -30,7 +30,7 @@ public abstract class HopperMinecartEntityMixin extends StorageMinecartEntity im
             this.setGlowing(true);
             MinecraftServer server = this.getWorld().getServer();
             if (server != null) {
-                if (enabled) {
+                if (isEnabled()) {
                     Team team = server.getScoreboard().getTeam("enabled_hopper_minecraft");
                     if (team == null) {
                         team = server.getScoreboard().addTeam("enabled_hopper_minecraft");
