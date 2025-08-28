@@ -12,6 +12,10 @@
         "sitOnTheGround": {
           "name": "Sit On The Ground",
           "desc": "Squatting down multiple times can make you sit on the ground"
+        },
+        "lockAllHopper": {
+          "name": "Lock All Hopper",
+          "desc": "All hopper will be locked, Whether he has received the redstone signal or not"
         }
       }
     }

@@ -12,6 +12,10 @@
         "sitOnTheGround": {
           "name": "席地而坐",
           "desc": "多次蹲下可以坐到地上"
+        },
+        "lockAllHopper": {
+          "name": "锁定所有漏斗",
+          "desc": "所有漏斗都会被锁定，无论他有没有接受到红石信号"
         }
       }
     }
