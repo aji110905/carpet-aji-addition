@@ -2,15 +2,10 @@ package aji;
 
 import carpet.api.settings.Rule;
 
-import static aji.CarpetAjiAdditionSettings.RuleCategory.CAA;
-import static aji.CarpetAjiAdditionSettings.RuleCategory.MINECART;
+import static aji.settings.RuleCategory.CAA;
+import static aji.settings.RuleCategory.MINECART;
 
 public class CarpetAjiAdditionSettings {
-    static class RuleCategory {
-        public static final String CAA = "CAA";
-        public static final String MINECART = "MINECART";
-    }
-
     @Rule(categories = {CAA, MINECART})
     public static boolean betterHopperMinecart = false;
 

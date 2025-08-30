@@ -1,6 +1,5 @@
-package aji.mixin.sitOnTheGround;
+package aji.settings.sitOnTheGround;
 
-import aji.CarpetAjiAdditionServer;
 import aji.CarpetAjiAdditionSettings;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;

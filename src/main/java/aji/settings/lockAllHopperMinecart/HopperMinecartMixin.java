@@ -1,4 +1,4 @@
-package aji.mixin.lockAllHopperMinecart;
+package aji.settings.lockAllHopperMinecart;
 
 import aji.CarpetAjiAdditionSettings;
 import net.minecraft.block.entity.Hopper;

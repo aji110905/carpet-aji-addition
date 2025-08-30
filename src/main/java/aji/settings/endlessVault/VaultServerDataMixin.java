@@ -1,4 +1,4 @@
-package aji.mixin.endlessVault;
+package aji.settings.endlessVault;
 
 import aji.CarpetAjiAdditionSettings;
 import it.unimi.dsi.fastutil.objects.ObjectLinkedOpenHashSet;

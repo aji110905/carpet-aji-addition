@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "aji.mixin",
+  "package": "aji.settings",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "betterHopperMinecart.HopperMinecartEntityMixin",
