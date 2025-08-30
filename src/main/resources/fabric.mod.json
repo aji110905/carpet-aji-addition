@@ -3,13 +3,13 @@
 	"id": "carpet-aji-addition",
 	"version": "${version}",
 	"name": "Carpet Aji Addition",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "This is a carpet addition",
 	"authors": [
 		"Aji"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/aji110905"
+		"homepage": "https://github.com/aji110905",
+		"sources": "https://github.com/aji110905/carpet-aji-addition"
 	},
 	"license": "MIT",
 	"icon": "assets/carpet-aji-addition/icon.png",
