@@ -2,29 +2,24 @@
   "carpet-aji-addition": {
     "carpet": {
       "category": {
-        "CAA": "CAA",
-        "MINECART": "minecart"
+        "CAA": "Given the author's limited English, writing English files is challenging. Contributions via pull requests on GitHub are welcome.",
+        "MINECART": "Given the author's limited English, writing English files is challenging. Contributions via pull requests on GitHub are welcome."
       },
       "rule": {
         "betterHopperMinecart": {
-          "name": "Better Hopper Minecart",
-          "desc": "Better Hopper Minecart"
+          "desc": "Given the author's limited English, writing English files is challenging. Contributions via pull requests on GitHub are welcome."
         },
         "sitOnTheGround": {
-          "name": "Sit On The Ground",
-          "desc": "Sit On The Ground"
+          "desc": "Given the author's limited English, writing English files is challenging. Contributions via pull requests on GitHub are welcome."
         },
         "lockAllHopper": {
-          "name": "Lock All Hopper",
-          "desc": "Lock All Hopper"
+          "desc": "Given the author's limited English, writing English files is challenging. Contributions via pull requests on GitHub are welcome."
         },
-        "endlessVault": {
-          "name": "Endless Vault",
-          "desc": "Endless Vault"
+        "BetterVault": {
+          "desc": "Given the author's limited English, writing English files is challenging. Contributions via pull requests on GitHub are welcome."
         },
         "lockAllHopperMinecart": {
-          "name": "Lock All Hopper Minecart",
-          "desc": "Lock All Hopper Minecart"
+          "desc": "Given the author's limited English, writing English files is challenging. Contributions via pull requests on GitHub are welcome."
         }
       }
     }

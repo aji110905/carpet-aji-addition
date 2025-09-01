@@ -16,14 +16,14 @@ import java.util.UUID;
 public class VaultServerDataMixin {
     @Inject(method = "hasRewardedPlayer", at = @At("HEAD"), cancellable = true)
     public void hasRewardedPlayer(PlayerEntity player, CallbackInfoReturnable<Boolean> cir) {
-        if (CarpetAjiAdditionSettings.endlessVault) {
+        if (CarpetAjiAdditionSettings.betterVault) {
             cir.setReturnValue(false);
         }
     }
 
     @Inject(method = "getRewardedPlayers", at = @At("HEAD"), cancellable = true)
     public void getRewardedPlayers(CallbackInfoReturnable<Set<UUID>> cir) {
-        if (CarpetAjiAdditionSettings.endlessVault) {
+        if (CarpetAjiAdditionSettings.betterVault) {
             cir.setReturnValue(new ObjectLinkedOpenHashSet<>());
         }
     }
