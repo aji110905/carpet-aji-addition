@@ -3,7 +3,7 @@
     "carpet": {
       "category": {
         "CAA": "CAA",
-        "MINECART": "Given the author's limited English, writing English files is challenging. Contributions via pull requests on GitHub are welcome."
+        "MINECART": "minecart"
       },
       "rule": {
         "betterHopperMinecart": {
