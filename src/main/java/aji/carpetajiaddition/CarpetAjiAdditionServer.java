@@ -1,6 +1,6 @@
-package aji;
+package aji.carpetajiaddition;
 
-import aji.utils.CarpetAjiAdditionTranslations;
+import aji.carpetajiaddition.utils.CarpetAjiAdditionTranslations;
 import carpet.CarpetExtension;
 import carpet.CarpetServer;
 import net.fabricmc.api.ModInitializer;
@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 import java.util.Map;
 
 public class CarpetAjiAdditionServer implements ModInitializer, CarpetExtension {
-	public static final String MOD_ID = "carpet-aji-addition";
+	public static final String MOD_ID = "carpetajiaddition";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	@Override

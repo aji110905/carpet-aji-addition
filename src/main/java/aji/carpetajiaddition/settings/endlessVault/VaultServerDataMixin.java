@@ -1,6 +1,6 @@
-package aji.settings.endlessVault;
+package aji.carpetajiaddition.settings.endlessVault;
 
-import aji.CarpetAjiAdditionSettings;
+import aji.carpetajiaddition.CarpetAjiAdditionSettings;
 import it.unimi.dsi.fastutil.objects.ObjectLinkedOpenHashSet;
 import net.minecraft.block.vault.VaultServerData;
 import net.minecraft.entity.player.PlayerEntity;

@@ -1,9 +1,9 @@
-package aji;
+package aji.carpetajiaddition;
 
 import carpet.api.settings.Rule;
 
-import static aji.settings.RuleCategory.CAA;
-import static aji.settings.RuleCategory.MINECART;
+import static aji.carpetajiaddition.settings.RuleCategory.CAA;
+import static aji.carpetajiaddition.settings.RuleCategory.MINECART;
 
 public class CarpetAjiAdditionSettings {
     @Rule(categories = {CAA, MINECART})

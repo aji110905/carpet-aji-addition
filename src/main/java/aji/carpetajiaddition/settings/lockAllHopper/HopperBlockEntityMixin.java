@@ -1,6 +1,6 @@
-package aji.settings.lockAllHopper;
+package aji.carpetajiaddition.settings.lockAllHopper;
 
-import aji.CarpetAjiAdditionSettings;
+import aji.carpetajiaddition.CarpetAjiAdditionSettings;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.entity.Hopper;

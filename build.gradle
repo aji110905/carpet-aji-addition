@@ -19,6 +19,9 @@ repositories {
     maven {
         url 'https://masa.dy.fi/maven'
     }
+    maven {
+        url "https://maven.terraformersmc.com/releases"
+    }
 }
 
 dependencies {
@@ -33,6 +36,9 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
     modImplementation "carpet:fabric-carpet:${project.minecraft_version}-${project.carpet_version}"
+    modImplementation ("com.terraformersmc:modmenu:6.1.0-rc.1"){
+        transitive(false)
+    }
 }
 
 processResources {

@@ -1,4 +1,4 @@
-package aji.utils;
+package aji.carpetajiaddition.utils;
 
 import com.google.common.collect.Maps;
 import com.google.common.reflect.TypeToken;
@@ -10,8 +10,8 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
 
-import static aji.CarpetAjiAdditionServer.LOGGER;
-import static aji.CarpetAjiAdditionServer.MOD_ID;
+import static aji.carpetajiaddition.CarpetAjiAdditionServer.LOGGER;
+import static aji.carpetajiaddition.CarpetAjiAdditionServer.MOD_ID;
 
 public class CarpetAjiAdditionTranslations {
     private static Map<String, String> getTranslationFromResourcePath(String lang) {

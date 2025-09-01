@@ -1,6 +1,6 @@
-package aji.settings.betterHopperMinecart;
+package aji.carpetajiaddition.settings.betterHopperMinecart;
 
-import aji.CarpetAjiAdditionSettings;
+import aji.carpetajiaddition.CarpetAjiAdditionSettings;
 import net.minecraft.block.entity.Hopper;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.vehicle.HopperMinecartEntity;

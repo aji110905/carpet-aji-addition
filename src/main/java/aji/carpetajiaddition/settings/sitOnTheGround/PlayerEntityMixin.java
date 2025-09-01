@@ -1,6 +1,6 @@
-package aji.settings.sitOnTheGround;
+package aji.carpetajiaddition.settings.sitOnTheGround;
 
-import aji.CarpetAjiAdditionSettings;
+import aji.carpetajiaddition.CarpetAjiAdditionSettings;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;

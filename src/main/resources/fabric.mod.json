@@ -1,6 +1,6 @@
 {
 	"schemaVersion": 1,
-	"id": "carpet-aji-addition",
+	"id": "carpetajiaddition",
 	"version": "${version}",
 	"name": "Carpet Aji Addition",
 	"description": "This is a carpet addition",
@@ -12,12 +12,15 @@
 		"sources": "https://github.com/aji110905/carpet-aji-addition"
 	},
 	"license": "MIT",
-	"icon": "assets/carpet-aji-addition/icon.png",
+	"icon": "assets/carpetajiaddition/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-          "aji.CarpetAjiAdditionServer"
-		]
+          "aji.carpetajiaddition.CarpetAjiAdditionServer"
+		],
+        "client": [
+          "aji.carpetajiaddition.client.CarpetAjiAdditionClient"
+        ]
 	},
 	"mixins": [
 		"carpet-aji-addition.mixins.json"
