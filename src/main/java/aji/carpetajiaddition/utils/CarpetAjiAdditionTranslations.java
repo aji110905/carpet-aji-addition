@@ -17,20 +17,11 @@ public class CarpetAjiAdditionTranslations {
     private static Map<String, String> getTranslationFromResourcePath(String lang) {
         Map<String, String> translations = Maps.newHashMap();
         String resourcePath = "assets/" + MOD_ID + "/lang/" + lang + ".json";
+        InputStream inputStream = CarpetAjiAdditionTranslations.class.getClassLoader().getResourceAsStream(resourcePath);
+        Gson gson = new Gson();
+        Map<String, Object> jsonMap = gson.fromJson(new InputStreamReader(inputStream, StandardCharsets.UTF_8), new TypeToken<Map<String, Object>>(){}.getType());
 
-        try (InputStream inputStream = CarpetAjiAdditionTranslations.class.getClassLoader().getResourceAsStream(resourcePath)) {
-            if (inputStream == null) {
-                return translations;
-            }
-            Gson gson = new Gson();
-            Map<String, Object> jsonMap = gson.fromJson(new InputStreamReader(inputStream, StandardCharsets.UTF_8),
-                    new TypeToken<Map<String, Object>>(){}.getType());
-            flattenMap("", jsonMap, translations);
-        } catch (IOException e) {
-            LOGGER.error("Unable to read translation file:{}", resourcePath, e);
-        } catch (com.google.gson.JsonSyntaxException e) {
-            LOGGER.error("Invalid JSON format in file:{}", resourcePath, e);
-        }
+        flattenMap("", jsonMap, translations);
 
         return translations;
     }
@@ -54,10 +45,6 @@ public class CarpetAjiAdditionTranslations {
         Map<String, String> fabricCarpetTranslations = Maps.newHashMap();
         Map<String, String> translations = getTranslationFromResourcePath(lang);
 
-        if (translations == null) {
-            return fabricCarpetTranslations;
-        }
-
         String targetPrefix = "carpet-aji-addition.carpet";
         String removePrefix = "carpet-aji-addition.";
 
@@ -73,22 +60,18 @@ public class CarpetAjiAdditionTranslations {
     }
 
     public static Map<String, String> getCarpetAjiAdditionTranslations(String lang) {
-        Map<String, String> CarpetAjiAddition = Maps.newHashMap();
+        Map<String, String> CarpetAjiAdditionTranslations = Maps.newHashMap();
         Map<String, String> translations = getTranslationFromResourcePath(lang);
-
-        if (translations == null) {
-            return CarpetAjiAddition;
-        }
 
         String targetPrefix = "carpet-aji-addition.carpet";
 
         for (Map.Entry<String, String> entry : translations.entrySet()) {
             String originalKey = entry.getKey();
             if (!(originalKey != null && originalKey.startsWith(targetPrefix))) {
-                CarpetAjiAddition.put(entry.getKey(), entry.getValue());
+                CarpetAjiAdditionTranslations.put(entry.getKey(), entry.getValue());
             }
         }
 
-        return CarpetAjiAddition;
+        return CarpetAjiAdditionTranslations;
     }
 }
