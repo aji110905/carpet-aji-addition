@@ -1,6 +1,7 @@
 {
   "carpet-aji-addition": {
     "carpet": {
+      "version": "version: ",
       "category": {
         "CAA": "CAA",
         "MINECART": "minecart"

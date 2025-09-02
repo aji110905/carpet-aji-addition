@@ -1,13 +1,15 @@
 {
   "required": true,
-  "package": "aji.carpetajiaddition.settings",
+  "package": "aji.carpetajiaddition.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "betterHopperMinecart.HopperMinecartEntityMixin",
-    "endlessVault.VaultServerDataMixin",
-    "lockAllHopper.HopperBlockEntityMixin",
-    "lockAllHopperMinecart.HopperMinecartMixin",
-    "sitOnTheGround.PlayerEntityMixin"
+    "settings.betterHopperMinecart.HopperMinecartEntityMixin",
+    "settings.endlessVault.VaultServerDataMixin",
+    "settings.lockAllHopper.HopperBlockEntityMixin",
+    "settings.lockAllHopperMinecart.HopperMinecartMixin",
+    "settings.sitOnTheGround.PlayerEntityMixin",
+
+    "showVersion.SettingsManagerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

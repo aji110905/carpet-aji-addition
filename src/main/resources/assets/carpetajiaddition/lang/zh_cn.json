@@ -1,6 +1,7 @@
 {
   "carpet-aji-addition": {
     "carpet": {
+      "version": "版本: ",
       "category": {
         "CAA": "CAA",
         "MINECART": "矿车"

@@ -1,6 +1,6 @@
 package aji.carpetajiaddition;
 
-import aji.carpetajiaddition.utils.CarpetAjiAdditionTranslations;
+import aji.carpetajiaddition.utils.TranslationsUtils.getTranslationsMap;
 import carpet.CarpetExtension;
 import carpet.CarpetServer;
 import net.fabricmc.api.ModInitializer;
@@ -13,6 +13,7 @@ import java.util.Map;
 public class CarpetAjiAdditionServer implements ModInitializer, CarpetExtension {
 	public static final String MOD_ID = "carpetajiaddition";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+    public static final String VERSION = "1.0.0";
 
 	@Override
 	public void onInitialize() {
@@ -31,6 +32,6 @@ public class CarpetAjiAdditionServer implements ModInitializer, CarpetExtension 
 
     @Override
     public Map<String, String> canHasTranslations(String lang) {
-        return CarpetAjiAdditionTranslations.getFabricCarpetTranslations(lang);
+        return getTranslationsMap.getFabricCarpetTranslations(lang);
     }
 }

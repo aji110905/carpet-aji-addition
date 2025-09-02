@@ -1,23 +1,21 @@
-package aji.carpetajiaddition.utils;
+package aji.carpetajiaddition.utils.TranslationsUtils;
 
 import com.google.common.collect.Maps;
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
 
-import static aji.carpetajiaddition.CarpetAjiAdditionServer.LOGGER;
 import static aji.carpetajiaddition.CarpetAjiAdditionServer.MOD_ID;
 
-public class CarpetAjiAdditionTranslations {
+public class getTranslationsMap {
     private static Map<String, String> getTranslationFromResourcePath(String lang) {
         Map<String, String> translations = Maps.newHashMap();
         String resourcePath = "assets/" + MOD_ID + "/lang/" + lang + ".json";
-        InputStream inputStream = CarpetAjiAdditionTranslations.class.getClassLoader().getResourceAsStream(resourcePath);
+        InputStream inputStream = getTranslationsMap.class.getClassLoader().getResourceAsStream(resourcePath);
         Gson gson = new Gson();
         Map<String, Object> jsonMap = gson.fromJson(new InputStreamReader(inputStream, StandardCharsets.UTF_8), new TypeToken<Map<String, Object>>(){}.getType());
 
