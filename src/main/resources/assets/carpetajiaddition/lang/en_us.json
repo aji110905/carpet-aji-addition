@@ -6,20 +6,20 @@
         "MINECART": "minecart"
       },
       "rule": {
-        "betterHopperMinecart": {
-          "desc": "Given the author's limited English, writing English files is challenging. Contributions via pull requests on GitHub are welcome."
+        "glowingHopperMinecart": {
+          "desc": "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub."
         },
         "sitOnTheGround": {
-          "desc": "Given the author's limited English, writing English files is challenging. Contributions via pull requests on GitHub are welcome."
+          "desc": "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub."
         },
         "lockAllHopper": {
-          "desc": "Given the author's limited English, writing English files is challenging. Contributions via pull requests on GitHub are welcome."
+          "desc": "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub."
         },
-        "betterVault": {
-          "desc": "Given the author's limited English, writing English files is challenging. Contributions via pull requests on GitHub are welcome."
+        "keepOpeningVault": {
+          "desc": "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub."
         },
         "lockAllHopperMinecart": {
-          "desc": "Given the author's limited English, writing English files is challenging. Contributions via pull requests on GitHub are welcome."
+          "desc": "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub."
         }
       }
     }

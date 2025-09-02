@@ -7,7 +7,7 @@ import static aji.carpetajiaddition.settings.RuleCategory.MINECART;
 
 public class CarpetAjiAdditionSettings {
     @Rule(categories = {CAA, MINECART})
-    public static boolean betterHopperMinecart = false;
+    public static boolean glowingHopperMinecart = false;
 
     @Rule(categories = {CAA})
     public static boolean sitOnTheGround = false;
@@ -16,7 +16,7 @@ public class CarpetAjiAdditionSettings {
     public static boolean lockAllHopper = false;
 
     @Rule(categories = {CAA})
-    public static boolean betterVault = false;
+    public static boolean keepOpeningVault = false;
 
     @Rule(categories = {CAA, MINECART})
     public static boolean lockAllHopperMinecart = false;

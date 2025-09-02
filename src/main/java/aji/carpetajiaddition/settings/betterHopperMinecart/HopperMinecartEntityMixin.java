@@ -26,7 +26,7 @@ public abstract class HopperMinecartEntityMixin extends StorageMinecartEntity im
 
     @Inject(method = "tick", at = @At("RETURN"))
     private void tick(CallbackInfo ci) {
-        if (CarpetAjiAdditionSettings.betterHopperMinecart) {
+        if (CarpetAjiAdditionSettings.glowingHopperMinecart) {
             this.setGlowing(true);
             MinecraftServer server = this.getWorld().getServer();
             if (server != null) {
