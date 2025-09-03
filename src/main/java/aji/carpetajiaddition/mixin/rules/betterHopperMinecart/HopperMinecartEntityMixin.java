@@ -24,30 +24,30 @@ public abstract class HopperMinecartEntityMixin extends StorageMinecartEntity im
         super(entityType, world);
     }
 
-    @Inject(method = "tick", at = @At("RETURN"))
+    @Inject(method = "tick", at = @At("HEAD"))
     private void tick(CallbackInfo ci) {
-        if (CarpetAjiAdditionSettings.glowingHopperMinecart) {
-            this.setGlowing(true);
-            MinecraftServer server = this.getWorld().getServer();
-            if (server != null) {
-                if (isEnabled()) {
-                    Team team = server.getScoreboard().getTeam("enabled_hopper_minecraft");
-                    if (team == null) {
-                        team = server.getScoreboard().addTeam("enabled_hopper_minecraft");
-                        team.setColor(Formatting.WHITE);
-                    }
-                    server.getScoreboard().addScoreHolderToTeam(this.getUuid().toString(), team);
-                }else {
-                    Team team = server.getScoreboard().getTeam("Locked_hopper_minecraft");
-                    if (team == null) {
-                        team = server.getScoreboard().addTeam("Locked_hopper_minecraft");
-                        team.setColor(Formatting.RED);
-                    }
-                    server.getScoreboard().addScoreHolderToTeam(this.getUuid().toString(), team);
-                }
-            }
+        if (!CarpetAjiAdditionSettings.glowingHopperMinecart) {
+            this.setGlowing(false);
             return;
         }
-        this.setGlowing(false);
+        this.setGlowing(true);
+        MinecraftServer server = this.getWorld().getServer();
+        if (server != null) {
+            if (isEnabled()) {
+                Team team = server.getScoreboard().getTeam("enabled_hopper_minecraft");
+                if (team == null) {
+                    team = server.getScoreboard().addTeam("enabled_hopper_minecraft");
+                    team.setColor(Formatting.WHITE);
+                }
+                server.getScoreboard().addScoreHolderToTeam(this.getUuid().toString(), team);
+            }else {
+                Team team = server.getScoreboard().getTeam("Locked_hopper_minecraft");
+                if (team == null) {
+                    team = server.getScoreboard().addTeam("Locked_hopper_minecraft");
+                    team.setColor(Formatting.RED);
+                }
+                server.getScoreboard().addScoreHolderToTeam(this.getUuid().toString(), team);
+            }
+        }
     }
 }

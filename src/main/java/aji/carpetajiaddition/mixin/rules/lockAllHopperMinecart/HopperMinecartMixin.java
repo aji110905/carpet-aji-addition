@@ -19,8 +19,6 @@ public abstract class HopperMinecartMixin extends StorageMinecartEntity implemen
 
     @Inject(method = "isEnabled", at = @At("HEAD"), cancellable = true)
     private void isEnabled(CallbackInfoReturnable<Boolean> cir) {
-        if (CarpetAjiAdditionSettings.lockAllHopperMinecart) {
-            cir.setReturnValue(false);
-        }
+        if (CarpetAjiAdditionSettings.lockAllHopperMinecart) cir.setReturnValue(false);
     }
 }

@@ -37,11 +37,6 @@ public abstract class BlockRotatorMixin {
     private static final int FLIP_COOLDOWN = 5;
 
     @Unique
-    private static boolean isTotemOfUndyingWrenchEnabled() {
-        return CarpetAjiAdditionSettings.totemOfUndyingWrench;
-    }
-
-    @Unique
     private static boolean isPlayerHoldingTotemInMainHand(PlayerEntity player) {
         return player.getMainHandStack().getItem() == Items.TOTEM_OF_UNDYING;
     }
@@ -65,13 +60,7 @@ public abstract class BlockRotatorMixin {
             remap = false
     )
     private static void postFlipBlockWithCactus(BlockState state, World world, PlayerEntity player, Hand hand, BlockHitResult hit, CallbackInfoReturnable<Boolean> cir) {
-        if (!isTotemOfUndyingWrenchEnabled()) {
-            return;
-        }
-
-        if (cir.getReturnValue()) {
-            return;
-        }
+        if (!CarpetAjiAdditionSettings.totemOfUndyingWrench && cir.getReturnValue()) return;
 
         if (isPlayerHoldingTotemInMainHand(player) && player.getOffHandStack().isEmpty()) {
             BlockPos pos = hit.getBlockPos();
@@ -141,19 +130,13 @@ public abstract class BlockRotatorMixin {
             remap = false
     )
     private static void postFlippinEligibility(Entity entity, CallbackInfoReturnable<Boolean> cir) {
-        if (!isTotemOfUndyingWrenchEnabled()) {
-            return;
-        }
-
-        if (cir.getReturnValue()) {
-            return;
-        }
+        if (!CarpetAjiAdditionSettings.totemOfUndyingWrench && cir.getReturnValue()) return;
 
         if (!(entity instanceof PlayerEntity player)) {
             return;
         }
 
-        if (isPlayerHoldingTotemInOffHand(player) && isPlayerHoldingBlockInMainHand(player) 
+        if (isPlayerHoldingTotemInOffHand(player) && isPlayerHoldingBlockInMainHand(player)
                 && !player.isSpectator()) {
             cir.setReturnValue(true);
         }

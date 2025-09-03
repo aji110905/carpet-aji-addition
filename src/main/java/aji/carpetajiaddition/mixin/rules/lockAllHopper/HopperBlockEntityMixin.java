@@ -23,9 +23,6 @@ public abstract class HopperBlockEntityMixin extends LootableContainerBlockEntit
 
     @Inject(method = "insertAndExtract", at = @At("HEAD"), cancellable = true)
     private static void insertAndExtract(World world, BlockPos pos, BlockState state, HopperBlockEntity blockEntity, BooleanSupplier booleanSupplier, CallbackInfoReturnable<Boolean> cir) {
-        if (CarpetAjiAdditionSettings.lockAllHopper) {
-            cir.setReturnValue(false);
-        }
+        if (CarpetAjiAdditionSettings.lockAllHopper) cir.setReturnValue(false);
     }
-
 }

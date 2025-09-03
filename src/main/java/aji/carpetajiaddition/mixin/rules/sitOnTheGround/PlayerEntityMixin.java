@@ -28,51 +28,50 @@ public abstract class PlayerEntityMixin extends LivingEntity {
         super(entityType, world);
     }
 
-    @Inject(method = "tick", at = @At("RETURN"))
+    @Inject(method = "tick", at = @At("HEAD"))
     private void onTick(CallbackInfo ci) {
-        if (CarpetAjiAdditionSettings.sitOnTheGround) {
-            boolean isSneaking = this.isSneaking();
-            long currentTime = this.getWorld().getTime();
+        if (!CarpetAjiAdditionSettings.sitOnTheGround) return;
+        boolean isSneaking = this.isSneaking();
+        long currentTime = this.getWorld().getTime();
 
-            if (ridenEntity != null && !this.hasVehicle()) {
-                ridenEntity.discard();
-                ridenEntity = null;
+        if (ridenEntity != null && !this.hasVehicle()) {
+            ridenEntity.discard();
+            ridenEntity = null;
+        }
+
+        if (isSneaking && !lastSneakState) {
+            if (sneakCount == 0) {
+                firstSneakTimestamp = currentTime;
+                sneakCount = 1;
             }
-
-            if (isSneaking && !lastSneakState) {
-                if (sneakCount == 0) {
-                    firstSneakTimestamp = currentTime;
-                    sneakCount = 1;
-                }
-            } else if (!isSneaking && lastSneakState) {
-                if (sneakCount >= 1 && sneakCount < 4) {
-                    if (currentTime - firstSneakTimestamp <= 10) {
-                        sneakCount++;
-                    } else {
-                        sneakCount = 0;
-                        firstSneakTimestamp = -1;
-                    }
-                } else if (sneakCount == 4) {
-                    if (!getWorld().isClient()) {
-                        if (ridenEntity != null) {
-                            ridenEntity.discard();
-                            ridenEntity = null;
-                        }
-                        ArmorStandEntity armorStand = new ArmorStandEntity(this.getWorld(), this.getX(), this.getY() - 1.9, this.getZ());
-                        ridenEntity = armorStand;
-                        armorStand.setInvisible(true);
-                        armorStand.setNoGravity(true);
-                        armorStand.setInvulnerable(true);
-                        armorStand.setCustomNameVisible(false);
-                        this.getWorld().spawnEntity(armorStand);
-                        this.startRiding(armorStand, true);
-                    }
+        } else if (!isSneaking && lastSneakState) {
+            if (sneakCount >= 1 && sneakCount < 4) {
+                if (currentTime - firstSneakTimestamp <= 10) {
+                    sneakCount++;
+                } else {
                     sneakCount = 0;
                     firstSneakTimestamp = -1;
                 }
+            } else if (sneakCount == 4) {
+                if (!getWorld().isClient()) {
+                    if (ridenEntity != null) {
+                        ridenEntity.discard();
+                        ridenEntity = null;
+                    }
+                    ArmorStandEntity armorStand = new ArmorStandEntity(this.getWorld(), this.getX(), this.getY() - 1.9, this.getZ());
+                    ridenEntity = armorStand;
+                    armorStand.setInvisible(true);
+                    armorStand.setNoGravity(true);
+                    armorStand.setInvulnerable(true);
+                    armorStand.setCustomNameVisible(false);
+                    this.getWorld().spawnEntity(armorStand);
+                    this.startRiding(armorStand, true);
+                }
+                sneakCount = 0;
+                firstSneakTimestamp = -1;
             }
-
-            lastSneakState = isSneaking;
         }
+
+        lastSneakState = isSneaking;
     }
 }
