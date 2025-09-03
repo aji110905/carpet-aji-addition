@@ -23,7 +23,4 @@ public class CarpetAjiAdditionSettings {
 
     @Rule(categories = {CAA})
     public static boolean totemOfUndyingWrench = false;
-    
-    @Rule(categories = {CAA})
-    public static boolean simpleBeacon = false;
 }

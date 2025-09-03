@@ -3,6 +3,7 @@ package aji.carpetajiaddition.utils.TranslationsUtils;
 import com.google.common.collect.Maps;
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -16,27 +17,15 @@ public class getTranslationsMap {
         Map<String, String> translations = Maps.newHashMap();
         String resourcePath = "assets/" + MOD_ID + "/lang/" + lang + ".json";
         InputStream inputStream = getTranslationsMap.class.getClassLoader().getResourceAsStream(resourcePath);
-        Gson gson = new Gson();
-        Map<String, Object> jsonMap = gson.fromJson(new InputStreamReader(inputStream, StandardCharsets.UTF_8), new TypeToken<Map<String, Object>>(){}.getType());
 
-        flattenMap("", jsonMap, translations);
+        if (inputStream == null) {
+            return translations;
+        }
+
+        Gson gson = new Gson();
+        translations = gson.fromJson(new InputStreamReader(inputStream, StandardCharsets.UTF_8), new TypeToken<Map<String, String>>(){}.getType());
 
         return translations;
-    }
-
-    private static void flattenMap(String parentKey, Object value, Map<String, String> translations) {
-        if (value instanceof Map<?, ?>) {
-            Map<?, ?> map = (Map<?, ?>) value;
-            for (Map.Entry<?, ?> entry : map.entrySet()) {
-                String key = entry.getKey().toString();
-                String newKey = parentKey.isEmpty() ? key : parentKey + "." + key;
-                flattenMap(newKey, entry.getValue(), translations);
-            }
-        } else {
-            if (value != null) {
-                translations.put(parentKey, value.toString());
-            }
-        }
     }
 
     public static Map<String, String> getFabricCarpetTranslations(String lang) {

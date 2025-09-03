@@ -8,7 +8,6 @@
     "rules.endlessVault.VaultServerDataMixin",
     "rules.lockAllHopper.HopperBlockEntityMixin",
     "rules.lockAllHopperMinecart.HopperMinecartMixin",
-    "rules.simpleBeacon.BeaconBlockEntityMixin",
     "rules.sitOnTheGround.PlayerEntityMixin",
     "rules.totemOfUndyingWrench.BlockRotatorMixin",
     "showVersion.SettingsManagerMixin"
