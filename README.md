@@ -12,6 +12,8 @@ Carpet Aji Addition 顾名思义，他是 [Fabric-Carpet](https://github.com/gne
 - 类型: `boolean`
 - 默认值: false
 - 参考值: `true`, `false`
+- 验证器:
+    - 严格(不区分大小写)
 
 ### 席地而坐（sitOnTheGround）
 
@@ -30,7 +32,9 @@ Carpet Aji Addition 顾名思义，他是 [Fabric-Carpet](https://github.com/gne
 - 类型: `boolean`
 - 默认值: false
 - 参考值: `true`, `false`
-
+- 验证器:
+    - 严格(不区分大小写)
+  
 ### 无尽宝库（keepOpeningVault）
 
 同一个玩家可以一直开启同一个宝库。
@@ -39,6 +43,8 @@ Carpet Aji Addition 顾名思义，他是 [Fabric-Carpet](https://github.com/gne
 - 类型: `boolean`
 - 默认值: false
 - 参考值: `true`, `false`
+- 验证器:
+    - 严格(不区分大小写)
 
 ### 无能的漏斗矿车（lockAllHopperMinecart）
 
@@ -48,6 +54,8 @@ Carpet Aji Addition 顾名思义，他是 [Fabric-Carpet](https://github.com/gne
 - 类型: `boolean`
 - 默认值: false
 - 参考值: `true`, `false`
+- 验证器:
+    - 严格(不区分大小写)
 
 ### 图腾扳手（totemOfUndyingWrench）
 
@@ -57,3 +65,5 @@ Carpet Aji Addition 顾名思义，他是 [Fabric-Carpet](https://github.com/gne
 - 类型: `boolean`
 - 默认值: false
 - 参考值: `true`, `false`
+- 验证器:
+    - 严格(不区分大小写)
