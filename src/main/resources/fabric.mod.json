@@ -16,11 +16,8 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-          "aji.carpetajiaddition.CarpetAjiAdditionServer"
-		],
-        "client": [
-          "aji.carpetajiaddition.client.CarpetAjiAdditionClient"
-        ]
+          "aji.carpetajiaddition.CarpetAjiAdditionMod"
+		]
 	},
 	"mixins": [
 		"carpet-aji-addition.mixins.json"

@@ -1,4 +1,4 @@
-package aji.carpetajiaddition.mixin.settings.sitOnTheGround;
+package aji.carpetajiaddition.mixin.rules.sitOnTheGround;
 
 import aji.carpetajiaddition.CarpetAjiAdditionSettings;
 import net.minecraft.entity.Entity;

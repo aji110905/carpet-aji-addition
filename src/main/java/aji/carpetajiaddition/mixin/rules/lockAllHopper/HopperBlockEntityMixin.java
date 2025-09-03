@@ -1,4 +1,4 @@
-package aji.carpetajiaddition.mixin.settings.lockAllHopper;
+package aji.carpetajiaddition.mixin.rules.lockAllHopper;
 
 import aji.carpetajiaddition.CarpetAjiAdditionSettings;
 import net.minecraft.block.BlockState;

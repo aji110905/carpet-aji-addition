@@ -1,4 +1,4 @@
-package aji.carpetajiaddition.mixin.settings.endlessVault;
+package aji.carpetajiaddition.mixin.rules.endlessVault;
 
 import aji.carpetajiaddition.CarpetAjiAdditionSettings;
 import it.unimi.dsi.fastutil.objects.ObjectLinkedOpenHashSet;

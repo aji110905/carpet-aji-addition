@@ -1,6 +1,6 @@
 package aji.carpetajiaddition.mixin.showVersion;
 
-import aji.carpetajiaddition.CarpetAjiAdditionServer;
+import aji.carpetajiaddition.CarpetAjiAdditionMod;
 import carpet.api.settings.SettingsManager;
 import carpet.utils.Messenger;
 import carpet.utils.Translations;
@@ -22,6 +22,6 @@ public abstract class SettingsManagerMixin {
             )
     )
     public void listAllSettings(ServerCommandSource source, CallbackInfoReturnable<Integer> cir) {
-        Messenger.m(source, "g Carpet Aji Addition " + Translations.tr("carpet.version") + CarpetAjiAdditionServer.VERSION);
+        Messenger.m(source, "g Carpet Aji Addition " + Translations.tr("carpet.version") + CarpetAjiAdditionMod.VERSION);
     }
 }
