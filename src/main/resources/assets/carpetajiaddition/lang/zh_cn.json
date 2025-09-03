@@ -26,6 +26,10 @@
         "lockAllHopperMinecart": {
           "name": "无能的漏斗矿车",
           "desc": "所有漏斗矿车都会被锁定，无论他下面是不是充能的激活铁轨。"
+        },
+        "totemOfUndyingWrench": {
+          "name": "图腾扳手",
+          "desc": "使用不死图腾调整方块朝向，不产生更新，图腾在副手时，放出来的方块为反方向。"
         }
       }
     }

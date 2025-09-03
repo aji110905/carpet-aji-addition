@@ -20,4 +20,7 @@ public class CarpetAjiAdditionSettings {
 
     @Rule(categories = {CAA, MINECART})
     public static boolean lockAllHopperMinecart = false;
+
+    @Rule(categories = {CAA})
+    public static boolean totemOfUndyingWrench = false;
 }

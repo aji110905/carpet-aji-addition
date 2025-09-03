@@ -9,7 +9,8 @@
     "rules.endlessVault.VaultServerDataMixin",
     "rules.lockAllHopper.HopperBlockEntityMixin",
     "rules.lockAllHopperMinecart.HopperMinecartMixin",
-    "rules.sitOnTheGround.PlayerEntityMixin"
+    "rules.sitOnTheGround.PlayerEntityMixin",
+    "rules.totemOfUndyingWrench.BlockRotatorMixin"
   ],
   "client": [
   ],
