@@ -28,7 +28,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Mixin(BlockRotator.class)
-public class BlockRotatorMixin {
+public abstract class BlockRotatorMixin {
     @Unique
     private static final Map<BlockPos, Long> lastFlipTimes = new HashMap<>();
     
