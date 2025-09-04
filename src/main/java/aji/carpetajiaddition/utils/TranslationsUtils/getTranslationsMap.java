@@ -32,8 +32,8 @@ public class getTranslationsMap {
         Map<String, String> fabricCarpetTranslations = Maps.newHashMap();
         Map<String, String> translations = getTranslationFromResourcePath(lang);
 
-        String targetPrefix = "carpet-aji-addition.carpet";
-        String removePrefix = "carpet-aji-addition.";
+        String targetPrefix = "carpetajiaddition.carpet";
+        String removePrefix = "carpetajiaddition.";
 
         for (Map.Entry<String, String> entry : translations.entrySet()) {
             String originalKey = entry.getKey();
@@ -50,7 +50,7 @@ public class getTranslationsMap {
         Map<String, String> CarpetAjiAdditionTranslations = Maps.newHashMap();
         Map<String, String> translations = getTranslationFromResourcePath(lang);
 
-        String targetPrefix = "carpet-aji-addition.carpet";
+        String targetPrefix = "carpetajiaddition.carpet";
 
         for (Map.Entry<String, String> entry : translations.entrySet()) {
             String originalKey = entry.getKey();

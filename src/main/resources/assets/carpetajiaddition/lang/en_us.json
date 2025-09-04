@@ -1,11 +1,17 @@
 {
-  "carpet-aji-addition.carpet.version": "version: ",
-  "carpet-aji-addition.carpet.category.CAA": "CAA",
-  "carpet-aji-addition.carpet.category.MINECART": "minecart",
-  "carpet-aji-addition.carpet.rule.glowingHopperMinecart.desc": "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub.",
-  "carpet-aji-addition.carpet.rule.sitOnTheGround.desc": "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub.",
-  "carpet-aji-addition.carpet.rule.lockAllHopper.desc": "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub.",
-  "carpet-aji-addition.carpet.rule.keepOpeningVault.desc": "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub.",
-  "carpet-aji-addition.carpet.rule.lockAllHopperMinecart.desc": "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub.",
-  "carpet-aji-addition.carpet.rule.totemOfUndyingWrench.desc": "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub."
+  "carpetajiaddition.version": "version: ",
+  "carpetajiaddition.carpet.category.CAA": "CAA",
+  "carpetajiaddition.carpet.category.MINECART": "minecart",
+  "carpetajiaddition.carpet.rule.glowingHopperMinecart.name": "Glowing Hopper Minecart",
+  "carpetajiaddition.carpet.rule.glowingHopperMinecart.desc": "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub.",
+  "carpetajiaddition.carpet.rule.sitOnTheGround.name": "Sit On The Ground",
+  "carpetajiaddition.carpet.rule.sitOnTheGround.desc": "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub.",
+  "carpetajiaddition.carpet.rule.lockAllHopper.name": "Lock All Hopper",
+  "carpetajiaddition.carpet.rule.lockAllHopper.desc": "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub.",
+  "carpetajiaddition.carpet.rule.keepOpeningVault.name": "Keep Opening Vault",
+  "carpetajiaddition.carpet.rule.keepOpeningVault.desc": "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub.",
+  "carpetajiaddition.carpet.rule.lockAllHopperMinecart.name": "Lock All Hopper Minecart",
+  "carpetajiaddition.carpet.rule.lockAllHopperMinecart.desc": "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub.",
+  "carpetajiaddition.carpet.rule.totemOfUndyingWrench.name": "Totem Of Undying Wrench",
+  "carpetajiaddition.carpet.rule.totemOfUndyingWrench.desc": "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub."
 }

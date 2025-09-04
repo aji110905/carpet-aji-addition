@@ -1,19 +1,31 @@
-carpet-aji-addition:
+carpetajiaddition:
+  version: "version: "
+
+  # ---------------------------------
+  # 传递给fabric-carpet的翻译
+  # 里面应该只出现category和rule两个字典
+  # ---------------------------------
+
   carpet:
-    version: "version: "
     category:
       CAA: "CAA"
       MINECART: "minecart"
     rule:
       glowingHopperMinecart:
+        name: "Glowing Hopper Minecart"
         desc: "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub."
       sitOnTheGround:
+        name: "Sit On The Ground"
         desc: "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub."
       lockAllHopper:
+        name: "Lock All Hopper"
         desc: "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub."
       keepOpeningVault:
+        name: "Keep Opening Vault"
         desc: "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub."
       lockAllHopperMinecart:
+        name: "Lock All Hopper Minecart"
         desc: "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub."
       totemOfUndyingWrench:
+        name: "Totem Of Undying Wrench"
         desc: "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub."

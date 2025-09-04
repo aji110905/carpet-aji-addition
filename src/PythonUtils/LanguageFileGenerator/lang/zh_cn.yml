@@ -1,6 +1,12 @@
-carpet-aji-addition:
+carpetajiaddition:
+  version: "版本: "
+
+  # ---------------------------------
+  # 传递给fabric-carpet的翻译
+  # 里面应该只出现category和rule两个字典
+  # ---------------------------------
+
   carpet:
-    version: "版本: "
     category:
       CAA: "CAA"
       MINECART: "矿车"
