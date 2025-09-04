@@ -1,5 +1,6 @@
 package aji.carpetajiaddition;
 
+import aji.carpetajiaddition.utils.TranslationsUtils.CarpetAjiAdditionTranslations;
 import aji.carpetajiaddition.utils.TranslationsUtils.getTranslationsMap;
 import carpet.CarpetExtension;
 import carpet.CarpetServer;
@@ -20,6 +21,7 @@ public class CarpetAjiAdditionExtension implements CarpetExtension {
 
     @Override
     public Map<String, String> canHasTranslations(String lang) {
+        CarpetAjiAdditionTranslations.readLanguageFiles(lang);
         return getTranslationsMap.getFabricCarpetTranslations(lang);
     }
 }
