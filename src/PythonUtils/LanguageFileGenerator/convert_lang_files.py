@@ -13,7 +13,7 @@ def process_language(d, parent_key='', sep='.'):
     return dict(items)
 
 def main():
-    target_dir = r"/assets/carpetajiaddition/lang"
+    target_dir = "C:\\Users\\24427\\Desktop\\carpet-aji-addition-1.0.0\\src\\main\\resources\\assets\\carpetajiaddition\\lang"
     os.makedirs(target_dir, exist_ok=True)
 
     with open('lang/en_us.yml', 'r', encoding='utf-8') as f:
