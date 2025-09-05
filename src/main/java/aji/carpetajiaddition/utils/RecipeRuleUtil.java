@@ -12,6 +12,7 @@ import java.util.Comparator;
 
 public class RecipeRuleUtil {
     public static void initializationRecipeRuleDate(MinecraftServer server) {
+        cleanRecipeRuleDate(server);
         File file = new File(server.getSavePath(WorldSavePath.DATAPACKS).toString() + "\\CarpetAjiAdditionData\\pack.mcmeta");
         if (!file.exists()) {
             file.getParentFile().mkdirs();
