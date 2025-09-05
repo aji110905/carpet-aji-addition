@@ -1,4 +1,4 @@
-package aji.carpetajiaddition.utils.TranslationsUtils;
+package aji.carpetajiaddition.translations;
 
 import java.util.Map;
 

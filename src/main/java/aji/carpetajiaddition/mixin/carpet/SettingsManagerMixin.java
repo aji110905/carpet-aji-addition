@@ -1,7 +1,7 @@
-package aji.carpetajiaddition.mixin.showVersion;
+package aji.carpetajiaddition.mixin.carpet;
 
 import aji.carpetajiaddition.CarpetAjiAdditionMod;
-import aji.carpetajiaddition.utils.TranslationsUtils.CarpetAjiAdditionTranslations;
+import aji.carpetajiaddition.translations.CarpetAjiAdditionTranslations;
 import carpet.api.settings.SettingsManager;
 import carpet.utils.Messenger;
 import net.minecraft.server.command.ServerCommandSource;

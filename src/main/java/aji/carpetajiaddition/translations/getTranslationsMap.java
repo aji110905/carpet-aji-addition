@@ -1,9 +1,8 @@
-package aji.carpetajiaddition.utils.TranslationsUtils;
+package aji.carpetajiaddition.translations;
 
 import com.google.common.collect.Maps;
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
-import com.google.gson.JsonSyntaxException;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
