@@ -1,14 +1,10 @@
 package aji.carpetajiaddition;
 
-import aji.carpetajiaddition.utils.TranslationsUtils.getTranslationsMap;
-import carpet.CarpetExtension;
 import carpet.CarpetServer;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.Map;
 
 public class CarpetAjiAdditionMod implements ModInitializer {
 	public static final String MOD_ID = "carpetajiaddition";
