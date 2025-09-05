@@ -9,7 +9,6 @@ carpetajiaddition:
   carpet:
     category:
       CAA: "CAA"
-      MINECART: "矿车"
     rule:
       glowingHopperMinecart:
         name: "发光的漏斗矿车"
@@ -29,3 +28,6 @@ carpetajiaddition:
       totemOfUndyingWrench:
         name: "图腾扳手"
         desc: "使用不死图腾调整方块朝向，不产生更新，图腾在副手时，放出来的方块为反方向。"
+      dragonEggRecipe:
+        name: "可合成龙蛋"
+        desc: "可以使用以下配方合成龙蛋\n哭泣的黑曜石，末影之眼，哭泣的黑曜石\n黑曜石，鸡蛋，黑曜石\n末影水晶，末影水晶，末影水晶"
