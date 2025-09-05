@@ -80,7 +80,7 @@ public class SimpleRecipeRuleValidator<T> extends RecipeRuleValidator<T> {
                 stream.forEach(path -> {
                     String fileName = path.getFileName().toString();
                     String filePath = resourcePath + "/" + fileName;
-                    try (InputStream inputStream = RecipeRuleValidator.class.getClassLoader().getResourceAsStream(filePath)) {
+                    try (InputStream inputStream = SimpleRecipeRuleValidator.class.getClassLoader().getResourceAsStream(filePath)) {
                         if (inputStream != null) {
                             String content = new String(inputStream.readAllBytes());
                             JsonObject jsonObject = JsonParser.parseString(content).getAsJsonObject();

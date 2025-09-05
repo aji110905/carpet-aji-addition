@@ -1,5 +1,6 @@
 package aji.carpetajiaddition;
 
+import aji.carpetajiaddition.validators.RecipeRule.OreRecipeRecipeRuleValidator;
 import aji.carpetajiaddition.validators.RecipeRule.SimpleRecipeRuleValidator;
 import carpet.api.settings.Rule;
 
@@ -28,6 +29,20 @@ public class CarpetAjiAdditionSettings {
     @Rule(categories = {CAA}, validators = SimpleRecipeRuleValidator.class)
     public static boolean dragonEggRecipe = false;
 
-//    @Rule(categories = {CAA}, validators = RecipeRuleValidator.class)
-//    public static boolean oreSynthesis = false;
+    @Rule(
+            categories = {CAA},
+            validators = OreRecipeRecipeRuleValidator.class,
+            options = {
+                    "null",
+                    "ore",
+                    "deepslate",
+                    "nether",
+                    "ore_and_deepslate",
+                    "deepslate_and_nether",
+                    "ore_and_nether",
+                    "ore_and_nether",
+                    "all"
+            }
+    )
+    public static String oreRecipe = "null";
 }
