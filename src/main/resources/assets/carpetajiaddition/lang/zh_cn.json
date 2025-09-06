@@ -14,5 +14,7 @@
   "carpetajiaddition.carpet.rule.totemOfUndyingWrench.name": "图腾扳手",
   "carpetajiaddition.carpet.rule.totemOfUndyingWrench.desc": "使用不死图腾调整方块朝向，不产生更新，图腾在副手时，放出来的方块为反方向。",
   "carpetajiaddition.carpet.rule.dragonEggRecipe.name": "可合成龙蛋",
-  "carpetajiaddition.carpet.rule.dragonEggRecipe.desc": "可以使用以下配方合成龙蛋\n哭泣的黑曜石，末影之眼，哭泣的黑曜石\n黑曜石，鸡蛋，黑曜石\n末影水晶，末影水晶，末影水晶"
+  "carpetajiaddition.carpet.rule.dragonEggRecipe.desc": "可以使用以下配方合成龙蛋\n哭泣的黑曜石，末影之眼，哭泣的黑曜石\n黑曜石，鸡蛋，黑曜石\n末影水晶，末影水晶，末影水晶",
+  "carpetajiaddition.carpet.rule.oreRecipe.name": "矿石逆合成",
+  "carpetajiaddition.carpet.rule.oreRecipe.desc": "可以使用8个矿石和一个对应的岩石获得一个矿石"
 }

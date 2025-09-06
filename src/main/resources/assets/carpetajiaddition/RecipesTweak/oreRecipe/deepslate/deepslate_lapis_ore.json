@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#*#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:lapis_lazuli"
+    },
+    "*": {
+      "item": "minecraft:deepslate"
+    }
+  },
+  "result": {
+    "id": "minecraft:deepslate_lapis_ore",
+    "count": 1
+  }
+}

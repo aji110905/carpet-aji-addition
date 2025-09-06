@@ -1,7 +1,7 @@
 package aji.carpetajiaddition;
 
 import aji.carpetajiaddition.validators.RecipeRule.OreRecipeRecipeRuleValidator;
-import aji.carpetajiaddition.validators.RecipeRule.SimpleRecipeRuleValidator;
+import aji.carpetajiaddition.validators.RecipeRule.RecipeRuleValidator;
 import carpet.api.settings.Rule;
 
 import static aji.carpetajiaddition.setting.RuleCategory.CAA;
@@ -26,7 +26,7 @@ public class CarpetAjiAdditionSettings {
     @Rule(categories = {CAA})
     public static boolean totemOfUndyingWrench = false;
 
-    @Rule(categories = {CAA}, validators = SimpleRecipeRuleValidator.class)
+    @Rule(categories = {CAA}, validators = RecipeRuleValidator.class)
     public static boolean dragonEggRecipe = false;
 
     @Rule(

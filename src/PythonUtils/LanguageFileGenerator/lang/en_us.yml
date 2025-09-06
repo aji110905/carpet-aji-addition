@@ -31,6 +31,6 @@ carpetajiaddition:
       dragonEggRecipe:
         name: "Dragon Egg Recipe"
         desc: "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub."
-#      oreSynthesis:
-#        name: "Ore Synthesis"
-#        desc: "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub."
+      oreRecipe:
+        name: "Ore Recipe"
+        desc: "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub."

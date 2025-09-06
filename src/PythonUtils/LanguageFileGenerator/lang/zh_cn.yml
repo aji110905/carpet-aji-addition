@@ -31,3 +31,6 @@ carpetajiaddition:
       dragonEggRecipe:
         name: "可合成龙蛋"
         desc: "可以使用以下配方合成龙蛋\n哭泣的黑曜石，末影之眼，哭泣的黑曜石\n黑曜石，鸡蛋，黑曜石\n末影水晶，末影水晶，末影水晶"
+      oreRecipe:
+        name: "矿石逆合成"
+        desc: "可以使用8个矿石和一个对应的岩石获得一个矿石"
