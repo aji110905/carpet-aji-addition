@@ -19,5 +19,7 @@
   "carpetajiaddition.carpet.rule.oreRecipe.name": "矿石逆合成",
   "carpetajiaddition.carpet.rule.oreRecipe.desc": "可以使用8个矿石和一个对应的岩石获得一个矿石",
   "carpetajiaddition.carpet.rule.dragonBreathRecipe.name": "龙息酿造",
-  "carpetajiaddition.carpet.rule.dragonBreathRecipe.desc": "使用浓稠的药水和龙蛋可以酿造出龙息"
+  "carpetajiaddition.carpet.rule.dragonBreathRecipe.desc": "使用浓稠的药水和龙蛋可以酿造出龙息",
+  "carpetajiaddition.carpet.rule.tameHorse.name": "听话的马",
+  "carpetajiaddition.carpet.rule.tameHorse.desc": "你可以100%驯服马"
 }

@@ -8,6 +8,7 @@
     "carpet.SettingsManagerMixin",
     "rules.betterHopperMinecart.HopperMinecartEntityMixin",
     "rules.endlessVault.VaultServerDataMixin",
+    "rules.tameHorse.HorseMixin",
     "rules.lockAllHopper.HopperBlockEntityMixin",
     "rules.lockAllHopperMinecart.HopperMinecartMixin",
     "rules.sitOnTheGround.PlayerEntityMixin",

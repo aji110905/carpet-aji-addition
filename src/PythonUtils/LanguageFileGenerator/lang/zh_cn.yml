@@ -38,3 +38,6 @@ carpetajiaddition:
       dragonBreathRecipe:
         name: "龙息酿造"
         desc: "使用浓稠的药水和龙蛋可以酿造出龙息"
+      tameHorse:
+        name: "听话的马"
+        desc: "你可以100%驯服马"
