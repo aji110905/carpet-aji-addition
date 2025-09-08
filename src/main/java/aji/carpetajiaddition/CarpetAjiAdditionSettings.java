@@ -27,6 +27,14 @@ public class CarpetAjiAdditionSettings {
     @Rule(categories = {CAA})
     public static boolean totemOfUndyingWrench = false;
 
+    /*
+     * 配方规则
+     *
+     * validators为
+     * {aji.carpetajiaddition.validators.RecipeRule.RecipeRule}
+     * 的实现类的规则为配方规则
+     */
+
     @Rule(
             categories = {CAA, RECIPE_RULE},
             validators = RecipeRuleValidator.class
