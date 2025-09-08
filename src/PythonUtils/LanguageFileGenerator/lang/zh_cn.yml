@@ -9,6 +9,7 @@ carpetajiaddition:
   carpet:
     category:
       CAA: "CAA"
+      RECIPE_RULE: "配方规则"
     rule:
       glowingHopperMinecart:
         name: "发光的漏斗矿车"
@@ -34,3 +35,6 @@ carpetajiaddition:
       oreRecipe:
         name: "矿石逆合成"
         desc: "可以使用8个矿石和一个对应的岩石获得一个矿石"
+      dragonBreathRecipe:
+        name: "龙息酿造"
+        desc: "使用浓稠的药水和龙蛋可以酿造出龙息"

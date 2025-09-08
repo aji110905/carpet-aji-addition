@@ -9,6 +9,7 @@ carpetajiaddition:
   carpet:
     category:
       CAA: "CAA"
+      RECIPE_RULE: "Recipe Rule"
     rule:
       glowingHopperMinecart:
         name: "Glowing Hopper Minecart"
@@ -33,4 +34,7 @@ carpetajiaddition:
         desc: "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub."
       oreRecipe:
         name: "Ore Recipe"
+        desc: "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub."
+      dragonBreathRecipe:
+        name: "Dragon Breath Recipe"
         desc: "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub."

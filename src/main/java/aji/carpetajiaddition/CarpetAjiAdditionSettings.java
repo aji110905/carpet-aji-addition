@@ -5,6 +5,7 @@ import aji.carpetajiaddition.validators.RecipeRule.RecipeRuleValidator;
 import carpet.api.settings.Rule;
 
 import static aji.carpetajiaddition.setting.RuleCategory.CAA;
+import static aji.carpetajiaddition.setting.RuleCategory.RECIPE_RULE;
 
 public class CarpetAjiAdditionSettings {
 
@@ -26,11 +27,14 @@ public class CarpetAjiAdditionSettings {
     @Rule(categories = {CAA})
     public static boolean totemOfUndyingWrench = false;
 
-    @Rule(categories = {CAA}, validators = RecipeRuleValidator.class)
+    @Rule(
+            categories = {CAA, RECIPE_RULE},
+            validators = RecipeRuleValidator.class
+    )
     public static boolean dragonEggRecipe = false;
 
     @Rule(
-            categories = {CAA},
+            categories = {CAA, RECIPE_RULE},
             validators = OreRecipeRecipeRuleValidator.class,
             options = {
                     "null",
@@ -45,4 +49,10 @@ public class CarpetAjiAdditionSettings {
             }
     )
     public static String oreRecipe = "null";
+
+    @Rule(
+            categories = {CAA, RECIPE_RULE},
+            validators = RecipeRuleValidator.class
+    )
+    public static boolean dragonBreathRecipe = false;
 }

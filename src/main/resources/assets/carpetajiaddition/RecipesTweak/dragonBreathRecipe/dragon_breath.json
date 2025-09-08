@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:brewing",
+  "ingredient": {
+    "base_potion": "minecraft:potion[type=thick]",
+    "item": "minecraft:dragon_egg"
+  },
+  "result": "minecraft:dragon_breath"
+}

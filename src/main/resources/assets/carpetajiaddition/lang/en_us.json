@@ -1,6 +1,7 @@
 {
   "carpetajiaddition.version": "version: ",
   "carpetajiaddition.carpet.category.CAA": "CAA",
+  "carpetajiaddition.carpet.category.RECIPE_RULE": "Recipe Rule",
   "carpetajiaddition.carpet.rule.glowingHopperMinecart.name": "Glowing Hopper Minecart",
   "carpetajiaddition.carpet.rule.glowingHopperMinecart.desc": "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub.",
   "carpetajiaddition.carpet.rule.sitOnTheGround.name": "Sit On The Ground",
@@ -16,5 +17,7 @@
   "carpetajiaddition.carpet.rule.dragonEggRecipe.name": "Dragon Egg Recipe",
   "carpetajiaddition.carpet.rule.dragonEggRecipe.desc": "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub.",
   "carpetajiaddition.carpet.rule.oreRecipe.name": "Ore Recipe",
-  "carpetajiaddition.carpet.rule.oreRecipe.desc": "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub."
+  "carpetajiaddition.carpet.rule.oreRecipe.desc": "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub.",
+  "carpetajiaddition.carpet.rule.dragonBreathRecipe.name": "Dragon Breath Recipe",
+  "carpetajiaddition.carpet.rule.dragonBreathRecipe.desc": "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub."
 }
