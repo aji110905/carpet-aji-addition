@@ -18,7 +18,7 @@ public class RecipeRuleUtil {
             file.getParentFile().mkdirs();
             String packMetaContent = "{\n" +
                     "  \"pack\": {\n" +
-                    "    \"pack_format\": 42,\n" +
+                    "    \"pack_format\": 18,\n" +
                     "    \"description\": \"Carpet Aji Addition Recipe Data\"\n" +
                     "  }\n" +
                     "}";
