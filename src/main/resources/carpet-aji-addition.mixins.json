@@ -4,14 +4,14 @@
   "package": "aji.carpetajiaddition.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "MinecraftServerMixin",
+    "carpet.SettingsManagerMixin",
     "rules.betterHopperMinecart.HopperMinecartEntityMixin",
     "rules.endlessVault.VaultServerDataMixin",
     "rules.lockAllHopper.HopperBlockEntityMixin",
     "rules.lockAllHopperMinecart.HopperMinecartMixin",
     "rules.sitOnTheGround.PlayerEntityMixin",
-    "rules.totemOfUndyingWrench.BlockRotatorMixin",
-
-    "carpet.SettingsManagerMixin"
+    "rules.totemOfUndyingWrench.BlockRotatorMixin"
   ],
   "client": [
   ],

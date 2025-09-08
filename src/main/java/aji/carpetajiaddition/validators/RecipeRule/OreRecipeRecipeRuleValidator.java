@@ -1,5 +1,6 @@
 package aji.carpetajiaddition.validators.RecipeRule;
 
+import aji.carpetajiaddition.CarpetAjiAdditionMod;
 import carpet.api.settings.CarpetRule;
 import carpet.api.settings.Validator;
 import com.google.gson.JsonObject;
@@ -10,9 +11,12 @@ import net.minecraft.util.WorldSavePath;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.*;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.net.URL;
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
+import java.util.*;
+import java.util.jar.JarEntry;
+import java.util.jar.JarFile;
 
 public class OreRecipeRecipeRuleValidator<T> extends Validator<T> implements RecipeRule{
     private String targetPath;
@@ -20,56 +24,55 @@ public class OreRecipeRecipeRuleValidator<T> extends Validator<T> implements Rec
 
     @Override
     public T validate(@Nullable ServerCommandSource source, CarpetRule<T> changingRule, T newValue, String userInput) {
-        if (source == null) return changingRule.value();
-        MinecraftServer server = source.getServer();
-        targetPath = server.getSavePath(WorldSavePath.DATAPACKS).toString() + "\\CarpetAjiAdditionData\\data\\carpetajiaddition\\recipe";
+        targetPath = CarpetAjiAdditionMod.MINECRAFT_SERVER.getSavePath(WorldSavePath.DATAPACKS).toString() + "\\CarpetAjiAdditionData\\data\\carpetajiaddition\\recipe";
         recipeFiles = readRecipeFiles(changingRule.name());
+        if (recipeFiles == null) return changingRule.value();
         if ("null".equals(newValue)){
             unloadRecipe(recipeFiles);
-            server.reloadResources(server.getDataPackManager().getEnabledIds());
+            CarpetAjiAdditionMod.MINECRAFT_SERVER.reloadResources(CarpetAjiAdditionMod.MINECRAFT_SERVER.getDataPackManager().getEnabledIds());
             return newValue;
         }else if("deepslate".equals(newValue)){
             unloadRecipe(recipeFiles);
             loadDeepslateRecipe();
-            server.reloadResources(server.getDataPackManager().getEnabledIds());
+            CarpetAjiAdditionMod.MINECRAFT_SERVER.reloadResources(CarpetAjiAdditionMod.MINECRAFT_SERVER.getDataPackManager().getEnabledIds());
             return newValue;
         }else if("nether".equals(newValue)){
             unloadRecipe(recipeFiles);
             loadNetherRecipe();
-            server.reloadResources(server.getDataPackManager().getEnabledIds());
+            CarpetAjiAdditionMod.MINECRAFT_SERVER.reloadResources(CarpetAjiAdditionMod.MINECRAFT_SERVER.getDataPackManager().getEnabledIds());
             return newValue;
         }else if("ore".equals(newValue)){
             unloadRecipe(recipeFiles);
             loadOreRecipe();
-            server.reloadResources(server.getDataPackManager().getEnabledIds());
+            CarpetAjiAdditionMod.MINECRAFT_SERVER.reloadResources(CarpetAjiAdditionMod.MINECRAFT_SERVER.getDataPackManager().getEnabledIds());
             return newValue;
         }else if("ore_and_deepslate".equals(newValue)){
             unloadRecipe(recipeFiles);
             loadDeepslateRecipe();
             loadOreRecipe();
-            server.reloadResources(server.getDataPackManager().getEnabledIds());
+            CarpetAjiAdditionMod.MINECRAFT_SERVER.reloadResources(CarpetAjiAdditionMod.MINECRAFT_SERVER.getDataPackManager().getEnabledIds());
             return newValue;
         }else if("deepslate_and_nether".equals(newValue)){
             unloadRecipe(recipeFiles);
             loadDeepslateRecipe();
             loadNetherRecipe();
-            server.reloadResources(server.getDataPackManager().getEnabledIds());
+            CarpetAjiAdditionMod.MINECRAFT_SERVER.reloadResources(CarpetAjiAdditionMod.MINECRAFT_SERVER.getDataPackManager().getEnabledIds());
             return newValue;
         }else if("ore_and_nether".equals(newValue)){
             unloadRecipe(recipeFiles);
             loadNetherRecipe();
             loadOreRecipe();
-            server.reloadResources(server.getDataPackManager().getEnabledIds());
+            CarpetAjiAdditionMod.MINECRAFT_SERVER.reloadResources(CarpetAjiAdditionMod.MINECRAFT_SERVER.getDataPackManager().getEnabledIds());
             return newValue;
         }else if("all".equals(newValue)){
             unloadRecipe(recipeFiles);
             loadDeepslateRecipe();
             loadNetherRecipe();
             loadOreRecipe();
-            server.reloadResources(server.getDataPackManager().getEnabledIds());
+            CarpetAjiAdditionMod.MINECRAFT_SERVER.reloadResources(CarpetAjiAdditionMod.MINECRAFT_SERVER.getDataPackManager().getEnabledIds());
             return newValue;
         }else{
-            return null;
+            return changingRule.value();
         }
     }
 
@@ -115,28 +118,39 @@ public class OreRecipeRecipeRuleValidator<T> extends Validator<T> implements Rec
     }
 
     @Override
-    public Map readRecipeFiles(String folderName) {
+    public Map<String, Map<String, JsonObject>> readRecipeFiles(String folderName) {
         Map<String, Map<String, JsonObject>> map = new HashMap<>();
+        String basePath = "assets/carpetajiaddition/RecipesTweak/" + folderName;
         try {
-            String resourcePath = OreRecipeRecipeRuleValidator
-                    .class
-                    .getClassLoader()
-                    .getResource("assets/carpetajiaddition/RecipesTweak/" + folderName)
-                    .getPath()
-                    .substring(1);
-            Arrays.stream(new File(resourcePath).listFiles()).forEach(file -> {
-                Map<String, JsonObject> fileMap = new HashMap<>();
-                Arrays.stream(file.listFiles()).forEach(file1 -> {
-                    try {
-                        JsonObject jsonObject = JsonParser.parseReader(new FileReader(file1)).getAsJsonObject();
-                        fileMap.put(file1.getName(), jsonObject);
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
+            ClassLoader classLoader = getClass().getClassLoader();
+            URL resourceUrl = classLoader.getResource(basePath);
+            if (resourceUrl == null) return null;
+            if (!resourceUrl.getProtocol().equals("jar")) return null;
+            String jarUrl = resourceUrl.getPath();
+            jarUrl = URLDecoder.decode(jarUrl, StandardCharsets.UTF_8);
+            String jarPath = jarUrl.substring(5, jarUrl.indexOf("!"));
+            try (JarFile jarFile = new JarFile(jarPath)) {
+                Enumeration<JarEntry> entries = jarFile.entries();
+                while (entries.hasMoreElements()) {
+                    JarEntry entry = entries.nextElement();
+                    String entryName = entry.getName();
+                    if (entryName.startsWith(basePath + "/") && !entry.isDirectory()) {
+                        String relativePath = entryName.substring(basePath.length() + 1);
+                        String[] pathParts = relativePath.split("/");
+                        if (pathParts.length >= 2) {
+                            String dirName = pathParts[0];
+                            String fileName = String.join("/", Arrays.copyOfRange(pathParts, 1, pathParts.length));
+                            try (InputStream inputStream = classLoader.getResourceAsStream(entryName);
+                                 InputStreamReader reader = new InputStreamReader(Objects.requireNonNull(inputStream))) {
+                                JsonObject jsonObject = JsonParser.parseReader(reader).getAsJsonObject();
+                                map.computeIfAbsent(dirName, k -> new HashMap<>())
+                                        .put(fileName, jsonObject);
+                            }
+                        }
                     }
-                });
-                map.put(file.getName(), fileMap);
-            });
-        }catch (RuntimeException e) {
+                }
+            }
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
         return map;

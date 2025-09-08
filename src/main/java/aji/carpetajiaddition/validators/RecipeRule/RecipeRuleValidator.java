@@ -1,43 +1,40 @@
 package aji.carpetajiaddition.validators.RecipeRule;
 
+import aji.carpetajiaddition.CarpetAjiAdditionMod;
 import carpet.api.settings.CarpetRule;
 import carpet.api.settings.Validator;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.util.WorldSavePath;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.*;
-import java.net.URISyntaxException;
 import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.stream.Stream;
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
+import java.util.*;
+import java.util.jar.JarEntry;
+import java.util.jar.JarFile;
 
 public class RecipeRuleValidator<T> extends Validator<T> implements RecipeRule{
     private String targetPath;
 
     @Override
-    public T validate(ServerCommandSource source, CarpetRule<T> currentRule, T newValue, String string) {
-        if (source == null) return currentRule.value();
-        MinecraftServer server = source.getServer();
-        targetPath = server.getSavePath(WorldSavePath.DATAPACKS).toString() + "\\CarpetAjiAdditionData\\data\\carpetajiaddition\\recipe";
-        Map<String, JsonObject> map = readRecipeFiles(currentRule.name());
-
+    public T validate(@Nullable ServerCommandSource source, CarpetRule<T> changingRule, T newValue, String string) {
+        targetPath = CarpetAjiAdditionMod.MINECRAFT_SERVER.getSavePath(WorldSavePath.DATAPACKS).toString() + "/CarpetAjiAdditionData/data/carpetajiaddition//recipe";
+        Map<String, JsonObject> recipeFiles = readRecipeFiles(changingRule.name());
+        if (recipeFiles == null) return changingRule.value();
         if (newValue instanceof Boolean) {
             if ((Boolean) newValue) {
-                loadRecipe(map);
+                loadRecipe(recipeFiles);
             } else {
-                unloadRecipe(map);
+                unloadRecipe(recipeFiles);
             }
-            server.reloadResources(server.getDataPackManager().getEnabledIds());
+            CarpetAjiAdditionMod.MINECRAFT_SERVER.reloadResources(CarpetAjiAdditionMod.MINECRAFT_SERVER.getDataPackManager().getEnabledIds());
             return newValue;
         }else{
-            return null;
+            return changingRule.value();
         }
     }
 
@@ -68,31 +65,39 @@ public class RecipeRuleValidator<T> extends Validator<T> implements RecipeRule{
         });
     }
 
+    @Override
     public Map<String, JsonObject> readRecipeFiles(String folderName) {
         Map<String, JsonObject> fileMap = new HashMap<>();
+        String basePath = "assets/carpetajiaddition/RecipesTweak/" + folderName;
         try {
-            String resourcePath = "assets/carpetajiaddition/RecipesTweak/" + folderName;
-            URL resourceUrl = RecipeRuleValidator.class.getClassLoader().getResource(resourcePath);
+            ClassLoader classLoader = getClass().getClassLoader();
+            URL resourceUrl = classLoader.getResource(basePath);
             if (resourceUrl == null) return null;
-            try (Stream<Path> stream = Files.list(Paths.get(resourceUrl.toURI()))) {
-                stream.forEach(path -> {
-                    String fileName = path.getFileName().toString();
-                    String filePath = resourcePath + "/" + fileName;
-                    try (InputStream inputStream = RecipeRuleValidator.class.getClassLoader().getResourceAsStream(filePath)) {
-                        if (inputStream != null) {
-                            String content = new String(inputStream.readAllBytes());
-                            JsonObject jsonObject = JsonParser.parseString(content).getAsJsonObject();
-                            fileMap.put(fileName, jsonObject);
+            if (!resourceUrl.getProtocol().equals("jar")) return null;
+            String jarUrl = resourceUrl.getPath();
+            jarUrl = URLDecoder.decode(jarUrl, StandardCharsets.UTF_8);
+            String jarPath = jarUrl.substring(5, jarUrl.indexOf("!"));
+            try (JarFile jarFile = new JarFile(jarPath)) {
+                Enumeration<JarEntry> entries = jarFile.entries();
+                while (entries.hasMoreElements()) {
+                    JarEntry entry = entries.nextElement();
+                    String entryName = entry.getName();
+                    if (entryName.startsWith(basePath + "/") && !entry.isDirectory()) {
+                        String fileName = entryName.substring(entryName.lastIndexOf("/") + 1);
+                        String relativePath = entryName.substring(basePath.length() + 1);
+                        if (!relativePath.contains("/")) {
+                            try (InputStream inputStream = classLoader.getResourceAsStream(entryName);
+                                 InputStreamReader reader = new InputStreamReader(Objects.requireNonNull(inputStream))) {
+                                JsonObject jsonObject = JsonParser.parseReader(reader).getAsJsonObject();
+                                fileMap.put(fileName, jsonObject);
+                            }
                         }
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
                     }
-                });
+                }
             }
-        } catch (URISyntaxException | IOException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
         return fileMap;
     }
 }
