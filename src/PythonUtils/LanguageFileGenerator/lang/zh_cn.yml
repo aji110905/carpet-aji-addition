@@ -9,7 +9,7 @@ carpetajiaddition:
   carpet:
     category:
       CAA: "CAA"
-      RECIPE_RULE: "配方规则"
+      recipe_rule: "配方规则"
     rule:
       glowingHopperMinecart:
         name: "发光的漏斗矿车"
