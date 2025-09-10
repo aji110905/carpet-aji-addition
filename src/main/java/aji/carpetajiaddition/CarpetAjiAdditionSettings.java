@@ -5,29 +5,30 @@ import aji.carpetajiaddition.validators.RecipeRule.RecipeRuleValidator;
 import carpet.api.settings.Rule;
 
 import static aji.carpetajiaddition.setting.RuleCategory.CAA;
-import static aji.carpetajiaddition.setting.RuleCategory.RECIPE_RULE;
+import static aji.carpetajiaddition.setting.RuleCategory.RECIPE;
+import static carpet.api.settings.RuleCategory.*;
 
 public class CarpetAjiAdditionSettings {
 
-    @Rule(categories = {CAA})
+    @Rule(categories = {CAA, CREATIVE})
     public static boolean glowingHopperMinecart = false;
 
-    @Rule(categories = {CAA})
+    @Rule(categories = {CAA, SURVIVAL})
     public static boolean sitOnTheGround = false;
 
-    @Rule(categories = {CAA})
+    @Rule(categories = {CAA, FEATURE})
     public static boolean lockAllHopper = false;
 
-    @Rule(categories = {CAA})
+    @Rule(categories = {CAA, SURVIVAL, FEATURE})
     public static boolean keepOpeningVault = false;
 
-    @Rule(categories = {CAA})
+    @Rule(categories = {CAA, FEATURE})
     public static boolean lockAllHopperMinecart = false;
 
-    @Rule(categories = {CAA})
+    @Rule(categories = {CAA, FEATURE})
     public static boolean totemOfUndyingWrench = false;
 
-    @Rule(categories = {CAA})
+    @Rule(categories = {CAA, SURVIVAL, FEATURE})
     public static boolean tameHorse = false;
 
     /*
@@ -36,13 +37,13 @@ public class CarpetAjiAdditionSettings {
      */
 
     @Rule(
-            categories = {CAA, RECIPE_RULE},
+            categories = {CAA, RECIPE},
             validators = RecipeRuleValidator.class
     )
     public static boolean dragonEggRecipe = false;
 
     @Rule(
-            categories = {CAA, RECIPE_RULE},
+            categories = {CAA, RECIPE},
             validators = OreRecipeRecipeRuleValidator.class,
             options = {
                     "null",
@@ -59,7 +60,7 @@ public class CarpetAjiAdditionSettings {
     public static String oreRecipe = "null";
 
     @Rule(
-            categories = {CAA, RECIPE_RULE},
+            categories = {CAA, RECIPE},
             validators = RecipeRuleValidator.class
     )
     public static boolean dragonBreathRecipe = false;
