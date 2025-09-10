@@ -19,19 +19,19 @@ import java.util.jar.JarFile;
 
 public class RecipeRuleValidator<T> extends Validator<T> implements RecipeRule{
     private String targetPath;
+    private Map<String, JsonObject> recipeFiles;
 
     @Override
     public T validate(@Nullable ServerCommandSource source, CarpetRule<T> changingRule, T newValue, String string) {
-        targetPath = CarpetAjiAdditionMod.MINECRAFT_SERVER.getSavePath(WorldSavePath.DATAPACKS).toString() + "/CarpetAjiAdditionData/data/carpetajiaddition//recipe";
-        Map<String, JsonObject> recipeFiles = readRecipeFiles(changingRule.name());
-        if (recipeFiles == null) return changingRule.value();
+        targetPath = CarpetAjiAdditionMod.minecraftServer.getSavePath(WorldSavePath.DATAPACKS).toString() + "/CarpetAjiAdditionData/data/carpetajiaddition//recipe";
+        recipeFiles = readRecipeFiles(changingRule.name());
         if (newValue instanceof Boolean) {
             if ((Boolean) newValue) {
                 loadRecipe(recipeFiles);
             } else {
                 unloadRecipe(recipeFiles);
             }
-            CarpetAjiAdditionMod.MINECRAFT_SERVER.reloadResources(CarpetAjiAdditionMod.MINECRAFT_SERVER.getDataPackManager().getEnabledIds());
+            if (source != null && source.getName() != "Server") CarpetAjiAdditionMod.minecraftServer.reloadResources(CarpetAjiAdditionMod.minecraftServer.getDataPackManager().getEnabledIds());
             return newValue;
         }else{
             return changingRule.value();

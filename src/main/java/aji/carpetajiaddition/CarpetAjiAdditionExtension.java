@@ -18,7 +18,7 @@ public class CarpetAjiAdditionExtension implements CarpetExtension {
 
     @Override
     public void onServerLoaded(MinecraftServer server) {
-        RecipeRuleUtil.initializationRecipeRuleDate(server);
+        RecipeRuleUtil.initializationRecipeRuleDate();
     }
 
     @Override
@@ -29,7 +29,7 @@ public class CarpetAjiAdditionExtension implements CarpetExtension {
 
     @Override
     public void onServerClosed(MinecraftServer server) {
-        RecipeRuleUtil.cleanRecipeRuleDate(server);
+        RecipeRuleUtil.cleanRecipeRuleDate();
     }
 
     @Override

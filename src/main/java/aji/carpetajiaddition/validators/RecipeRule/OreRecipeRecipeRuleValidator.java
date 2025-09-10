@@ -24,56 +24,46 @@ public class OreRecipeRecipeRuleValidator<T> extends Validator<T> implements Rec
 
     @Override
     public T validate(@Nullable ServerCommandSource source, CarpetRule<T> changingRule, T newValue, String userInput) {
-        targetPath = CarpetAjiAdditionMod.MINECRAFT_SERVER.getSavePath(WorldSavePath.DATAPACKS).toString() + "\\CarpetAjiAdditionData\\data\\carpetajiaddition\\recipe";
+        targetPath = CarpetAjiAdditionMod.minecraftServer.getSavePath(WorldSavePath.DATAPACKS).toString() + "\\CarpetAjiAdditionData\\data\\carpetajiaddition\\recipe";
         recipeFiles = readRecipeFiles(changingRule.name());
-        if (recipeFiles == null) return changingRule.value();
-        if ("null".equals(newValue)){
+        if (isValid(newValue)) {
             unloadRecipe(recipeFiles);
-            CarpetAjiAdditionMod.MINECRAFT_SERVER.reloadResources(CarpetAjiAdditionMod.MINECRAFT_SERVER.getDataPackManager().getEnabledIds());
-            return newValue;
-        }else if("deepslate".equals(newValue)){
-            unloadRecipe(recipeFiles);
-            loadDeepslateRecipe();
-            CarpetAjiAdditionMod.MINECRAFT_SERVER.reloadResources(CarpetAjiAdditionMod.MINECRAFT_SERVER.getDataPackManager().getEnabledIds());
-            return newValue;
-        }else if("nether".equals(newValue)){
-            unloadRecipe(recipeFiles);
-            loadNetherRecipe();
-            CarpetAjiAdditionMod.MINECRAFT_SERVER.reloadResources(CarpetAjiAdditionMod.MINECRAFT_SERVER.getDataPackManager().getEnabledIds());
-            return newValue;
-        }else if("ore".equals(newValue)){
-            unloadRecipe(recipeFiles);
-            loadOreRecipe();
-            CarpetAjiAdditionMod.MINECRAFT_SERVER.reloadResources(CarpetAjiAdditionMod.MINECRAFT_SERVER.getDataPackManager().getEnabledIds());
-            return newValue;
-        }else if("ore_and_deepslate".equals(newValue)){
-            unloadRecipe(recipeFiles);
-            loadDeepslateRecipe();
-            loadOreRecipe();
-            CarpetAjiAdditionMod.MINECRAFT_SERVER.reloadResources(CarpetAjiAdditionMod.MINECRAFT_SERVER.getDataPackManager().getEnabledIds());
-            return newValue;
-        }else if("deepslate_and_nether".equals(newValue)){
-            unloadRecipe(recipeFiles);
-            loadDeepslateRecipe();
-            loadNetherRecipe();
-            CarpetAjiAdditionMod.MINECRAFT_SERVER.reloadResources(CarpetAjiAdditionMod.MINECRAFT_SERVER.getDataPackManager().getEnabledIds());
-            return newValue;
-        }else if("ore_and_nether".equals(newValue)){
-            unloadRecipe(recipeFiles);
-            loadNetherRecipe();
-            loadOreRecipe();
-            CarpetAjiAdditionMod.MINECRAFT_SERVER.reloadResources(CarpetAjiAdditionMod.MINECRAFT_SERVER.getDataPackManager().getEnabledIds());
-            return newValue;
-        }else if("all".equals(newValue)){
-            unloadRecipe(recipeFiles);
-            loadDeepslateRecipe();
-            loadNetherRecipe();
-            loadOreRecipe();
-            CarpetAjiAdditionMod.MINECRAFT_SERVER.reloadResources(CarpetAjiAdditionMod.MINECRAFT_SERVER.getDataPackManager().getEnabledIds());
+            if ("null".equals(newValue)){
+            }else if("deepslate".equals(newValue)){
+                loadDeepslateRecipe();
+            }else if("nether".equals(newValue)){
+                loadNetherRecipe();
+            }else if("ore".equals(newValue)){
+                loadOreRecipe();
+            }else if("ore_and_deepslate".equals(newValue)){
+                loadDeepslateRecipe();
+                loadOreRecipe();
+            }else if("deepslate_and_nether".equals(newValue)){
+                loadDeepslateRecipe();
+                loadNetherRecipe();
+            }else if("ore_and_nether".equals(newValue)){
+                loadNetherRecipe();
+                loadOreRecipe();
+            }else if("all".equals(newValue)){
+                loadDeepslateRecipe();
+                loadNetherRecipe();
+                loadOreRecipe();
+            }
+            if (source != null) CarpetAjiAdditionMod.minecraftServer.reloadResources(CarpetAjiAdditionMod.minecraftServer.getDataPackManager().getEnabledIds());
             return newValue;
         }else{
             return changingRule.value();
         }
+    }
+
+    private static <T> boolean isValid(T newValue) {
+        String[] rightValues = {"null", "ore", "deepslate", "nether", "ore_and_deepslate", "deepslate_and_nether", "ore_and_nether", "all"};
+        for (String value : rightValues) {
+            if (value.equals(newValue)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void loadOreRecipe() {

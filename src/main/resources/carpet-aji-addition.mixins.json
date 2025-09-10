@@ -4,7 +4,7 @@
   "package": "aji.carpetajiaddition.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "MinecraftServerMixin",
+    "carpet.CarpetServerMixin",
     "carpet.SettingsManagerMixin",
     "rules.betterHopperMinecart.HopperMinecartEntityMixin",
     "rules.endlessVault.VaultServerDataMixin",
