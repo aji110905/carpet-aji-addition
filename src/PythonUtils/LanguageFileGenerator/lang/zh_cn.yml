@@ -42,7 +42,7 @@ carpetajiaddition:
         desc: "为龙蛋添加了合理的配方"
       oreRecipe:
         name: "矿石逆合成"
-        desc: "可以使用8个矿石和一个对应的岩石获得一个矿石"
+        desc: "为所有原矿添加了合理的配方"
       dragonBreathRecipe:
         name: "可合成龙息"
         desc: "为龙息添加了合理的配方"
