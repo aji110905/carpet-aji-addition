@@ -1,7 +1,7 @@
 {
   "carpetajiaddition.version": "版本: ",
   "carpetajiaddition.carpet.category.CAA": "CAA",
-  "carpetajiaddition.carpet.category.recipe_rule": "配方规则",
+  "carpetajiaddition.carpet.category.recipe": "配方",
   "carpetajiaddition.carpet.rule.glowingHopperMinecart.name": "发光的漏斗矿车",
   "carpetajiaddition.carpet.rule.glowingHopperMinecart.desc": "漏斗矿车被锁定时会发出红光，反之白光。",
   "carpetajiaddition.carpet.rule.sitOnTheGround.name": "席地而坐",

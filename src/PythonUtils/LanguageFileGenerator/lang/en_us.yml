@@ -9,7 +9,7 @@ carpetajiaddition:
   carpet:
     category:
       CAA: "CAA"
-      recipe_rule: "Recipe Rule"
+      recipe: "Recipe"
     rule:
       glowingHopperMinecart:
         name: "Glowing Hopper Minecart"
