@@ -29,15 +29,20 @@ carpetajiaddition:
       totemOfUndyingWrench:
         name: "图腾扳手"
         desc: "使用不死图腾调整方块朝向，不产生更新，图腾在副手时，放出来的方块为反方向。"
+      tameHorse:
+        name: "听话的马"
+        desc: "你可以100%驯服马"
+
+    #-----------------
+    #下方的规则为配方规则
+    #-----------------
+
       dragonEggRecipe:
         name: "可合成龙蛋"
-        desc: "可以使用以下配方合成龙蛋\n哭泣的黑曜石，末影之眼，哭泣的黑曜石\n黑曜石，鸡蛋，黑曜石\n末影水晶，末影水晶，末影水晶"
+        desc: "为龙蛋添加了合理的配方"
       oreRecipe:
         name: "矿石逆合成"
         desc: "可以使用8个矿石和一个对应的岩石获得一个矿石"
       dragonBreathRecipe:
         name: "可合成龙息"
-        desc: "使用龙蛋和玻璃瓶合成龙息"
-      tameHorse:
-        name: "听话的马"
-        desc: "你可以100%驯服马"
+        desc: "为龙息添加了合理的配方"
