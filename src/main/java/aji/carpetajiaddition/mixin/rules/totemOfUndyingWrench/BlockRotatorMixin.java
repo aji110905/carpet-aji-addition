@@ -10,7 +10,6 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Items;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.Property;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
@@ -31,8 +30,7 @@ import java.util.Map;
 public abstract class BlockRotatorMixin {
     @Unique
     private static final Map<BlockPos, Long> lastFlipTimes = new HashMap<>();
-    
-    // 冷却时间（tick）
+
     @Unique
     private static final int FLIP_COOLDOWN = 5;
 
@@ -92,9 +90,10 @@ public abstract class BlockRotatorMixin {
     private static boolean flipBlockDirectly(BlockState state, World world, BlockPos pos) {
         Collection<Property<?>> properties = state.getProperties();
         for (Property<?> property : properties) {
-            if (property instanceof DirectionProperty) {
-                DirectionProperty directionProperty = (DirectionProperty) property;
-                Direction currentDirection = (Direction) state.get(directionProperty);
+            if (property.getType() == Direction.class) {
+                @SuppressWarnings("unchecked")
+                Property<Direction> directionProperty = (Property<Direction>) property;
+                Direction currentDirection = state.get(directionProperty);
                 Direction newDirection = getRestrictedNextDirection(currentDirection, directionProperty.getValues());
                 if (newDirection != null && newDirection != currentDirection) {
                     BlockState newState = state.with(directionProperty, newDirection);

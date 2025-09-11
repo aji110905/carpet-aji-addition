@@ -7,12 +7,8 @@
     "###"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:redstone"
-    },
-    "*": {
-      "item": "minecraft:deepslate"
-    }
+    "#": "minecraft:redstone",
+    "*": "minecraft:deepslate"
   },
   "result": {
     "id": "minecraft:deepslate_redstone_ore",

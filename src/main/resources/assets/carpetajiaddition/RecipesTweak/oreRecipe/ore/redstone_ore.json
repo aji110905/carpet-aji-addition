@@ -7,12 +7,8 @@
     "###"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:redstone"
-    },
-    "*": {
-      "item": "minecraft:stone"
-    }
+    "#": "minecraft:redstone",
+    "*": "minecraft:stone"
   },
   "result": {
     "id": "minecraft:redstone_ore",

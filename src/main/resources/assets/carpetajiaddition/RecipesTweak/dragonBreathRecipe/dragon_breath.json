@@ -6,12 +6,8 @@
     "*"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:dragon_egg"
-    },
-    "*": {
-      "item": "minecraft:glass_bottle"
-    }
+    "#": "minecraft:dragon_egg",
+    "*": "minecraft:glass_bottle"
   },
   "result": {
     "id": "minecraft:dragon_breath",
