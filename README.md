@@ -6,6 +6,10 @@ Carpet Aji Addition 顾名思义，他是 [Fabric-Carpet](https://github.com/gne
 
 master分支为1.21
 
+模组的语言文件使用
+[Carpet-Aji-Addition-Language-File-Generator](https://github.com/aji110905/Carpet-Aji-Addition-Language-File-Generator)
+来生成
+
 ## 问题报告
 请在 [Github](https://github.com/aji110905/Carpet-Aji-Addition/issues) 提交问题。
 
