@@ -29,6 +29,14 @@ carpetajiaddition:
       totemOfUndyingWrench:
         name: "Totem Of Undying Wrench"
         desc: "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub."
+      tameHorse:
+        name: "Tame Horse"
+        desc: "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub."
+
+      #-----------------
+      #下方的规则为配方规则
+      #-----------------
+
       dragonEggRecipe:
         name: "Dragon Egg Recipe"
         desc: "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub."
@@ -37,7 +45,4 @@ carpetajiaddition:
         desc: "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub."
       dragonBreathRecipe:
         name: "Dragon Breath Recipe"
-        desc: "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub."
-      tameHorse:
-        name: "Tame Horse"
         desc: "Given the author's limited cultural background, writing documents in other languages is quite challenging. If you are interested in contributing, please feel free to submit a pull request on GitHub."
