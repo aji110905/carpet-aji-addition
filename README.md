@@ -13,5 +13,7 @@ master分支为1.21
 ## 问题报告
 请在 [Github](https://github.com/aji110905/Carpet-Aji-Addition/issues) 提交问题。
 
+如果你要提交bug，请附带日志文件。
+
 ## wiki
 访问 [wiki](https://github.com/aji110905/Carpet-Aji-Addition/wiki)
