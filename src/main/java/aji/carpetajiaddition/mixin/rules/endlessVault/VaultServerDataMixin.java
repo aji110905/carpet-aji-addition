@@ -13,7 +13,7 @@ import java.util.Set;
 import java.util.UUID;
 
 @Mixin(VaultServerData.class)
-public class VaultServerDataMixin {
+public abstract class VaultServerDataMixin {
     @Inject(method = "hasRewardedPlayer", at = @At("HEAD"), cancellable = true)
     public void hasRewardedPlayer(PlayerEntity player, CallbackInfoReturnable<Boolean> cir) {
         if (CarpetAjiAdditionSettings.keepOpeningVault) cir.setReturnValue(false);
